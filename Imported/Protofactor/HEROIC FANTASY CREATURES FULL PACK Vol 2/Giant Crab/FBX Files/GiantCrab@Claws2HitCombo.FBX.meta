@@ -1,0 +1,334 @@
+fileFormatVersion: 2
+guid: 80f814c69636d9e40bdfde2c709d5c8c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: "Cha\xEEne CI001"
+    100002: "Cha\xEEne CI002"
+    100004: "Cha\xEEne CI003"
+    100006: "Cha\xEEne CI004"
+    100008: "Cha\xEEne CI005"
+    100010: "Cha\xEEne CI006"
+    100012: "Cha\xEEne CI007"
+    100014: "Cha\xEEne CI008"
+    100016: "Cha\xEEne CI009"
+    100018: "Cha\xEEne CI010"
+    100020: "Cha\xEEne CI011"
+    100022: "Cha\xEEne CI012"
+    100024: "Cha\xEEne CI013"
+    100026: "Cha\xEEne CI014"
+    100028: "Cha\xEEne CI015"
+    100030: "Cha\xEEne CI016"
+    100032: "Cha\xEEne CI017"
+    100034: "Cha\xEEne CI018"
+    100036: Dummy001
+    100038: Dummy002
+    100040: Dummy003
+    100042: Dummy004
+    100044: Dummy005
+    100046: Factice001
+    100048: Factice002
+    100050: Factice003
+    100052: Factice004
+    100054: Factice005
+    100056: Factice006
+    100058: Factice007
+    100060: Factice008
+    100062: Factice009
+    100064: Factice010
+    100066: Factice011
+    100068: Factice012
+    100070: Factice013
+    100072: Factice014
+    100074: Factice015
+    100076: Factice016
+    100078: Factice017
+    100080: Factice018
+    100082: Factice019
+    100084: Factice020
+    100086: Factice021
+    100088: Factice023
+    100090: Factice024
+    100092: Factice025
+    100094: Factice026
+    100096: Factice027
+    100098: Factice028
+    100100: Factice029
+    100102: Factice030
+    100104: Factice031
+    100106: Factice032
+    100108: Factice033
+    100110: Factice034
+    100112: GIANT_CRAB_ARM_L_1
+    100114: GIANT_CRAB_ARM_R_1
+    100116: GIANT_CRAB_CLAW_A_nub
+    100118: GIANT_CRAB_CLAW_L_A
+    100120: GIANT_CRAB_CLAW_L_B
+    100122: GIANT_CRAB_CLAW_L_B_nub
+    100124: GIANT_CRAB_CLAW_R_A
+    100126: GIANT_CRAB_CLAW_R_A_nub
+    100128: GIANT_CRAB_CLAW_R_B
+    100130: GIANT_CRAB_CLAW_R_B_nub
+    100132: GIANT_CRAB_FOREARM_L_2
+    100134: GIANT_CRAB_FOREARM_R_2
+    100136: GIANT_CRAB_LEG_L_1_A
+    100138: GIANT_CRAB_LEG_L_1_B
+    100140: GIANT_CRAB_LEG_L_1_C
+    100142: GIANT_CRAB_LEG_L_1_D
+    100144: GIANT_CRAB_LEG_L_1_nub
+    100146: GIANT_CRAB_LEG_L_2_A
+    100148: GIANT_CRAB_LEG_L_2_B
+    100150: GIANT_CRAB_LEG_L_2_C
+    100152: GIANT_CRAB_LEG_L_2_D
+    100154: GIANT_CRAB_LEG_L_2_nub
+    100156: GIANT_CRAB_LEG_L_3_A
+    100158: GIANT_CRAB_LEG_L_3_B
+    100160: GIANT_CRAB_LEG_L_3_C
+    100162: GIANT_CRAB_LEG_L_3_D
+    100164: GIANT_CRAB_LEG_L_3_nub
+    100166: GIANT_CRAB_LEG_L_4_A
+    100168: GIANT_CRAB_LEG_L_4_B
+    100170: GIANT_CRAB_LEG_L_4_C
+    100172: GIANT_CRAB_LEG_L_4_D
+    100174: GIANT_CRAB_LEG_L_4_nub
+    100176: GIANT_CRAB_LEG_R_1_A
+    100178: GIANT_CRAB_LEG_R_1_B
+    100180: GIANT_CRAB_LEG_R_1_C
+    100182: GIANT_CRAB_LEG_R_1_D
+    100184: GIANT_CRAB_LEG_R_1_nub
+    100186: GIANT_CRAB_LEG_R_2_A
+    100188: GIANT_CRAB_LEG_R_2_B
+    100190: GIANT_CRAB_LEG_R_2_C
+    100192: GIANT_CRAB_LEG_R_2_D
+    100194: GIANT_CRAB_LEG_R_2_nub
+    100196: GIANT_CRAB_LEG_R_3_A
+    100198: GIANT_CRAB_LEG_R_3_B
+    100200: GIANT_CRAB_LEG_R_3_C
+    100202: GIANT_CRAB_LEG_R_3_D
+    100204: GIANT_CRAB_LEG_R_3_nub
+    100206: GIANT_CRAB_LEG_R_4_A
+    100208: GIANT_CRAB_LEG_R_4_B
+    100210: GIANT_CRAB_LEG_R_4_C
+    100212: GIANT_CRAB_LEG_R_4_D
+    100214: GIANT_CRAB_LEG_R_4_nub
+    100216: GIANT_CRAB_MOUTH_ARMS_L_1
+    100218: GIANT_CRAB_MOUTH_ARMS_L_2
+    100220: GIANT_CRAB_MOUTH_ARMS_L_nub
+    100222: GIANT_CRAB_MOUTH_ARMS_R_1
+    100224: GIANT_CRAB_MOUTH_ARMS_R_2
+    100226: GIANT_CRAB_MOUTH_ARMS_R_nub
+    100228: GIANT_CRAB_ROOT_
+    100230: GIANT_CRAB_ROOT_ 1
+    100232: GIANT_CRAB_ROOT_nub
+    100234: GIANT_CRAB_SHELL
+    100236: GIANT_CRAB_Shell_nub
+    100238: //RootNode
+    400000: "Cha\xEEne CI001"
+    400002: "Cha\xEEne CI002"
+    400004: "Cha\xEEne CI003"
+    400006: "Cha\xEEne CI004"
+    400008: "Cha\xEEne CI005"
+    400010: "Cha\xEEne CI006"
+    400012: "Cha\xEEne CI007"
+    400014: "Cha\xEEne CI008"
+    400016: "Cha\xEEne CI009"
+    400018: "Cha\xEEne CI010"
+    400020: "Cha\xEEne CI011"
+    400022: "Cha\xEEne CI012"
+    400024: "Cha\xEEne CI013"
+    400026: "Cha\xEEne CI014"
+    400028: "Cha\xEEne CI015"
+    400030: "Cha\xEEne CI016"
+    400032: "Cha\xEEne CI017"
+    400034: "Cha\xEEne CI018"
+    400036: Dummy001
+    400038: Dummy002
+    400040: Dummy003
+    400042: Dummy004
+    400044: Dummy005
+    400046: Factice001
+    400048: Factice002
+    400050: Factice003
+    400052: Factice004
+    400054: Factice005
+    400056: Factice006
+    400058: Factice007
+    400060: Factice008
+    400062: Factice009
+    400064: Factice010
+    400066: Factice011
+    400068: Factice012
+    400070: Factice013
+    400072: Factice014
+    400074: Factice015
+    400076: Factice016
+    400078: Factice017
+    400080: Factice018
+    400082: Factice019
+    400084: Factice020
+    400086: Factice021
+    400088: Factice023
+    400090: Factice024
+    400092: Factice025
+    400094: Factice026
+    400096: Factice027
+    400098: Factice028
+    400100: Factice029
+    400102: Factice030
+    400104: Factice031
+    400106: Factice032
+    400108: Factice033
+    400110: Factice034
+    400112: GIANT_CRAB_ARM_L_1
+    400114: GIANT_CRAB_ARM_R_1
+    400116: GIANT_CRAB_CLAW_A_nub
+    400118: GIANT_CRAB_CLAW_L_A
+    400120: GIANT_CRAB_CLAW_L_B
+    400122: GIANT_CRAB_CLAW_L_B_nub
+    400124: GIANT_CRAB_CLAW_R_A
+    400126: GIANT_CRAB_CLAW_R_A_nub
+    400128: GIANT_CRAB_CLAW_R_B
+    400130: GIANT_CRAB_CLAW_R_B_nub
+    400132: GIANT_CRAB_FOREARM_L_2
+    400134: GIANT_CRAB_FOREARM_R_2
+    400136: GIANT_CRAB_LEG_L_1_A
+    400138: GIANT_CRAB_LEG_L_1_B
+    400140: GIANT_CRAB_LEG_L_1_C
+    400142: GIANT_CRAB_LEG_L_1_D
+    400144: GIANT_CRAB_LEG_L_1_nub
+    400146: GIANT_CRAB_LEG_L_2_A
+    400148: GIANT_CRAB_LEG_L_2_B
+    400150: GIANT_CRAB_LEG_L_2_C
+    400152: GIANT_CRAB_LEG_L_2_D
+    400154: GIANT_CRAB_LEG_L_2_nub
+    400156: GIANT_CRAB_LEG_L_3_A
+    400158: GIANT_CRAB_LEG_L_3_B
+    400160: GIANT_CRAB_LEG_L_3_C
+    400162: GIANT_CRAB_LEG_L_3_D
+    400164: GIANT_CRAB_LEG_L_3_nub
+    400166: GIANT_CRAB_LEG_L_4_A
+    400168: GIANT_CRAB_LEG_L_4_B
+    400170: GIANT_CRAB_LEG_L_4_C
+    400172: GIANT_CRAB_LEG_L_4_D
+    400174: GIANT_CRAB_LEG_L_4_nub
+    400176: GIANT_CRAB_LEG_R_1_A
+    400178: GIANT_CRAB_LEG_R_1_B
+    400180: GIANT_CRAB_LEG_R_1_C
+    400182: GIANT_CRAB_LEG_R_1_D
+    400184: GIANT_CRAB_LEG_R_1_nub
+    400186: GIANT_CRAB_LEG_R_2_A
+    400188: GIANT_CRAB_LEG_R_2_B
+    400190: GIANT_CRAB_LEG_R_2_C
+    400192: GIANT_CRAB_LEG_R_2_D
+    400194: GIANT_CRAB_LEG_R_2_nub
+    400196: GIANT_CRAB_LEG_R_3_A
+    400198: GIANT_CRAB_LEG_R_3_B
+    400200: GIANT_CRAB_LEG_R_3_C
+    400202: GIANT_CRAB_LEG_R_3_D
+    400204: GIANT_CRAB_LEG_R_3_nub
+    400206: GIANT_CRAB_LEG_R_4_A
+    400208: GIANT_CRAB_LEG_R_4_B
+    400210: GIANT_CRAB_LEG_R_4_C
+    400212: GIANT_CRAB_LEG_R_4_D
+    400214: GIANT_CRAB_LEG_R_4_nub
+    400216: GIANT_CRAB_MOUTH_ARMS_L_1
+    400218: GIANT_CRAB_MOUTH_ARMS_L_2
+    400220: GIANT_CRAB_MOUTH_ARMS_L_nub
+    400222: GIANT_CRAB_MOUTH_ARMS_R_1
+    400224: GIANT_CRAB_MOUTH_ARMS_R_2
+    400226: GIANT_CRAB_MOUTH_ARMS_R_nub
+    400228: GIANT_CRAB_ROOT_
+    400230: GIANT_CRAB_ROOT_ 1
+    400232: GIANT_CRAB_ROOT_nub
+    400234: GIANT_CRAB_SHELL
+    400236: GIANT_CRAB_Shell_nub
+    400238: //RootNode
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: GIANT_CRAB_ROOT_
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: a438d0c6a218e474cb5078f33989eaa5,
+    type: 3}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

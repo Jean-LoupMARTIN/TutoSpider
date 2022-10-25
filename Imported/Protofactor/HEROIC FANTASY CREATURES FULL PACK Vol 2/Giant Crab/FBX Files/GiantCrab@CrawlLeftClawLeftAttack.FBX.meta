@@ -1,0 +1,216 @@
+fileFormatVersion: 2
+guid: 884d86988ae99cd4c9330fcdaa1a688e
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Factice001
+    100002: Factice002
+    100004: Factice003
+    100006: Factice004
+    100008: Factice005
+    100010: Factice006
+    100012: Factice015
+    100014: Factice016
+    100016: Factice017
+    100018: Factice018
+    100020: Factice019
+    100022: Factice020
+    100024: Factice021
+    100026: Factice028
+    100028: GIANT_CRAB_ARM_L_1
+    100030: GIANT_CRAB_ARM_R_1
+    100032: GIANT_CRAB_CLAW_L_A
+    100034: GIANT_CRAB_CLAW_L_B
+    100036: GIANT_CRAB_CLAW_R_A
+    100038: GIANT_CRAB_CLAW_R_B
+    100040: GIANT_CRAB_FOREARM_L_2
+    100042: GIANT_CRAB_FOREARM_R_2
+    100044: GIANT_CRAB_LEG_L_1_A
+    100046: GIANT_CRAB_LEG_L_1_B
+    100048: GIANT_CRAB_LEG_L_1_C
+    100050: GIANT_CRAB_LEG_L_1_D
+    100052: GIANT_CRAB_LEG_L_2_A
+    100054: GIANT_CRAB_LEG_L_2_B
+    100056: GIANT_CRAB_LEG_L_2_C
+    100058: GIANT_CRAB_LEG_L_2_D
+    100060: GIANT_CRAB_LEG_L_3_A
+    100062: GIANT_CRAB_LEG_L_3_B
+    100064: GIANT_CRAB_LEG_L_3_C
+    100066: GIANT_CRAB_LEG_L_3_D
+    100068: GIANT_CRAB_LEG_L_4_A
+    100070: GIANT_CRAB_LEG_L_4_B
+    100072: GIANT_CRAB_LEG_L_4_C
+    100074: GIANT_CRAB_LEG_L_4_D
+    100076: GIANT_CRAB_LEG_R_1_A
+    100078: GIANT_CRAB_LEG_R_1_B
+    100080: GIANT_CRAB_LEG_R_1_C
+    100082: GIANT_CRAB_LEG_R_1_D
+    100084: GIANT_CRAB_LEG_R_2_A
+    100086: GIANT_CRAB_LEG_R_2_B
+    100088: GIANT_CRAB_LEG_R_2_C
+    100090: GIANT_CRAB_LEG_R_2_D
+    100092: GIANT_CRAB_LEG_R_3_A
+    100094: GIANT_CRAB_LEG_R_3_B
+    100096: GIANT_CRAB_LEG_R_3_C
+    100098: GIANT_CRAB_LEG_R_3_D
+    100100: GIANT_CRAB_LEG_R_4_A
+    100102: GIANT_CRAB_LEG_R_4_B
+    100104: GIANT_CRAB_LEG_R_4_C
+    100106: GIANT_CRAB_LEG_R_4_D
+    100108: GIANT_CRAB_MOUTH_ARMS_L_1
+    100110: GIANT_CRAB_MOUTH_ARMS_L_2
+    100112: GIANT_CRAB_MOUTH_ARMS_R_1
+    100114: GIANT_CRAB_MOUTH_ARMS_R_2
+    100116: GIANT_CRAB_ROOT_
+    100118: GIANT_CRAB_SHELL
+    100120: //RootNode
+    400000: Factice001
+    400002: Factice002
+    400004: Factice003
+    400006: Factice004
+    400008: Factice005
+    400010: Factice006
+    400012: Factice015
+    400014: Factice016
+    400016: Factice017
+    400018: Factice018
+    400020: Factice019
+    400022: Factice020
+    400024: Factice021
+    400026: Factice028
+    400028: GIANT_CRAB_ARM_L_1
+    400030: GIANT_CRAB_ARM_R_1
+    400032: GIANT_CRAB_CLAW_L_A
+    400034: GIANT_CRAB_CLAW_L_B
+    400036: GIANT_CRAB_CLAW_R_A
+    400038: GIANT_CRAB_CLAW_R_B
+    400040: GIANT_CRAB_FOREARM_L_2
+    400042: GIANT_CRAB_FOREARM_R_2
+    400044: GIANT_CRAB_LEG_L_1_A
+    400046: GIANT_CRAB_LEG_L_1_B
+    400048: GIANT_CRAB_LEG_L_1_C
+    400050: GIANT_CRAB_LEG_L_1_D
+    400052: GIANT_CRAB_LEG_L_2_A
+    400054: GIANT_CRAB_LEG_L_2_B
+    400056: GIANT_CRAB_LEG_L_2_C
+    400058: GIANT_CRAB_LEG_L_2_D
+    400060: GIANT_CRAB_LEG_L_3_A
+    400062: GIANT_CRAB_LEG_L_3_B
+    400064: GIANT_CRAB_LEG_L_3_C
+    400066: GIANT_CRAB_LEG_L_3_D
+    400068: GIANT_CRAB_LEG_L_4_A
+    400070: GIANT_CRAB_LEG_L_4_B
+    400072: GIANT_CRAB_LEG_L_4_C
+    400074: GIANT_CRAB_LEG_L_4_D
+    400076: GIANT_CRAB_LEG_R_1_A
+    400078: GIANT_CRAB_LEG_R_1_B
+    400080: GIANT_CRAB_LEG_R_1_C
+    400082: GIANT_CRAB_LEG_R_1_D
+    400084: GIANT_CRAB_LEG_R_2_A
+    400086: GIANT_CRAB_LEG_R_2_B
+    400088: GIANT_CRAB_LEG_R_2_C
+    400090: GIANT_CRAB_LEG_R_2_D
+    400092: GIANT_CRAB_LEG_R_3_A
+    400094: GIANT_CRAB_LEG_R_3_B
+    400096: GIANT_CRAB_LEG_R_3_C
+    400098: GIANT_CRAB_LEG_R_3_D
+    400100: GIANT_CRAB_LEG_R_4_A
+    400102: GIANT_CRAB_LEG_R_4_B
+    400104: GIANT_CRAB_LEG_R_4_C
+    400106: GIANT_CRAB_LEG_R_4_D
+    400108: GIANT_CRAB_MOUTH_ARMS_L_1
+    400110: GIANT_CRAB_MOUTH_ARMS_L_2
+    400112: GIANT_CRAB_MOUTH_ARMS_R_1
+    400114: GIANT_CRAB_MOUTH_ARMS_R_2
+    400116: GIANT_CRAB_ROOT_
+    400118: GIANT_CRAB_SHELL
+    400120: //RootNode
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: GIANT_CRAB_ROOT_
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: a438d0c6a218e474cb5078f33989eaa5,
+    type: 3}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,234 @@
+fileFormatVersion: 2
+guid: b80098a30015a6549a3e28973d79f25f
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Mech_CalfFrontLeft
+    100002: Mech_CalfFrontRight
+    100004: Mech_CalfRearLeft
+    100006: Mech_CalfRearRight
+    100008: Mech_Cockpit
+    100010: Mech_CockpitDoor
+    100012: Mech_FootFrontLeft
+    100014: Mech_FootFrontRight
+    100016: Mech_FootRearLeft
+    100018: Mech_FootRearRight
+    100020: Mech_HipFrontLeft
+    100022: Mech_HipFrontRight
+    100024: Mech_HipRearLeft
+    100026: Mech_HipRearRight
+    100028: Mech_Neck
+    100030: Mech_Pelvis
+    100032: Mech_PistonAnkleFrontLeft_1
+    100034: Mech_PistonAnkleRearLeft_1
+    100036: Mech_PistonAnkleRearLeft_1 1
+    100038: Mech_PistonAnkleRearRight_1
+    100040: Mech_PistonHipFrontLeft_1
+    100042: Mech_PistonHipFrontRight_1
+    100044: Mech_PistonHipRearLeft_1
+    100046: Mech_PistonHipRearRight_1
+    100048: Mech_PistonPelvisFrontLeft_A1
+    100050: Mech_PistonPelvisFrontLeft_B1
+    100052: Mech_PistonPelvisFrontRight_A1
+    100054: Mech_PistonPelvisFrontRight_B1
+    100056: Mech_PistonPelvisRearLeft_A1
+    100058: Mech_PistonPelvisRearLeft_B1
+    100060: Mech_PistonPelvisRearRight_A1
+    100062: Mech_PistonPelvisRearRight_B1
+    100064: Mech_PistonThighFrontLeftA1
+    100066: Mech_PistonThighRearLeft_1
+    100068: Mech_PistonThighRearRight_1
+    100070: Mech_PistonThighRearRight_1 1
+    100072: Mech_PistonToeFrontLeft_A1
+    100074: Mech_PistonToeFrontLeft_B1
+    100076: Mech_PistonToeFrontLeft_C1
+    100078: Mech_PistonToeFrontRight_A1
+    100080: Mech_PistonToeFrontRight_B1
+    100082: Mech_PistonToeFrontRight_C1
+    100084: Mech_PistonToeRearLeft_A1
+    100086: Mech_PistonToeRearLeft_B1
+    100088: Mech_PistonToeRearLeft_C1
+    100090: Mech_PistonToeRearRight_A1
+    100092: Mech_PistonToeRearRight_B1
+    100094: Mech_PistonToeRearRight_C1
+    100096: Mech_ShoulderLeft
+    100098: Mech_ShoulderRight
+    100100: Mech_ThighFrontLeft
+    100102: Mech_ThighFrontRight
+    100104: Mech_ThighRearLeft
+    100106: Mech_ThighRearRight
+    100108: Mech_ToeFrontLeft_A
+    100110: Mech_ToeFrontLeft_B
+    100112: Mech_ToeFrontLeft_C
+    100114: Mech_ToeFrontRight_A
+    100116: Mech_ToeFrontRight_B
+    100118: Mech_ToeFrontRight_C
+    100120: Mech_ToeRearLeft_A
+    100122: Mech_ToeRearLeft_B
+    100124: Mech_ToeRearLeft_C
+    100126: Mech_ToeRearRight_A
+    100128: Mech_ToeRearRight_B
+    100130: Mech_ToeRearRight_C
+    100132: PosMissileLeft_3
+    100134: //RootNode
+    100136: root
+    100138: SM_MissileRack_Left
+    400000: Mech_CalfFrontLeft
+    400002: Mech_CalfFrontRight
+    400004: Mech_CalfRearLeft
+    400006: Mech_CalfRearRight
+    400008: Mech_Cockpit
+    400010: Mech_CockpitDoor
+    400012: Mech_FootFrontLeft
+    400014: Mech_FootFrontRight
+    400016: Mech_FootRearLeft
+    400018: Mech_FootRearRight
+    400020: Mech_HipFrontLeft
+    400022: Mech_HipFrontRight
+    400024: Mech_HipRearLeft
+    400026: Mech_HipRearRight
+    400028: Mech_Neck
+    400030: Mech_Pelvis
+    400032: Mech_PistonAnkleFrontLeft_1
+    400034: Mech_PistonAnkleRearLeft_1
+    400036: Mech_PistonAnkleRearLeft_1 1
+    400038: Mech_PistonAnkleRearRight_1
+    400040: Mech_PistonHipFrontLeft_1
+    400042: Mech_PistonHipFrontRight_1
+    400044: Mech_PistonHipRearLeft_1
+    400046: Mech_PistonHipRearRight_1
+    400048: Mech_PistonPelvisFrontLeft_A1
+    400050: Mech_PistonPelvisFrontLeft_B1
+    400052: Mech_PistonPelvisFrontRight_A1
+    400054: Mech_PistonPelvisFrontRight_B1
+    400056: Mech_PistonPelvisRearLeft_A1
+    400058: Mech_PistonPelvisRearLeft_B1
+    400060: Mech_PistonPelvisRearRight_A1
+    400062: Mech_PistonPelvisRearRight_B1
+    400064: Mech_PistonThighFrontLeftA1
+    400066: Mech_PistonThighRearLeft_1
+    400068: Mech_PistonThighRearRight_1
+    400070: Mech_PistonThighRearRight_1 1
+    400072: Mech_PistonToeFrontLeft_A1
+    400074: Mech_PistonToeFrontLeft_B1
+    400076: Mech_PistonToeFrontLeft_C1
+    400078: Mech_PistonToeFrontRight_A1
+    400080: Mech_PistonToeFrontRight_B1
+    400082: Mech_PistonToeFrontRight_C1
+    400084: Mech_PistonToeRearLeft_A1
+    400086: Mech_PistonToeRearLeft_B1
+    400088: Mech_PistonToeRearLeft_C1
+    400090: Mech_PistonToeRearRight_A1
+    400092: Mech_PistonToeRearRight_B1
+    400094: Mech_PistonToeRearRight_C1
+    400096: Mech_ShoulderLeft
+    400098: Mech_ShoulderRight
+    400100: Mech_ThighFrontLeft
+    400102: Mech_ThighFrontRight
+    400104: Mech_ThighRearLeft
+    400106: Mech_ThighRearRight
+    400108: Mech_ToeFrontLeft_A
+    400110: Mech_ToeFrontLeft_B
+    400112: Mech_ToeFrontLeft_C
+    400114: Mech_ToeFrontRight_A
+    400116: Mech_ToeFrontRight_B
+    400118: Mech_ToeFrontRight_C
+    400120: Mech_ToeRearLeft_A
+    400122: Mech_ToeRearLeft_B
+    400124: Mech_ToeRearLeft_C
+    400126: Mech_ToeRearRight_A
+    400128: Mech_ToeRearRight_B
+    400130: Mech_ToeRearRight_C
+    400132: PosMissileLeft_3
+    400134: //RootNode
+    400136: root
+    400138: SM_MissileRack_Left
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: root
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 2cb45fe2996867f4dbd7634d5cbd4641,
+    type: 3}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
