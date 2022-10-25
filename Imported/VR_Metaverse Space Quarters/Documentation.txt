@@ -1,0 +1,46 @@
+VR/Metaverse Space Quarters
+
+This package works only in Unity version 2020.2.2f1 and higher.
+If you need HDRP or URP version click on 'VR/Metaverse Space Quarters (HDRP).unitypackage' or 'VR/Metaverse Space Quarters (URP).unitypackage' in HDRP_URP_packages folder.
+
+VR/Metaverse Space Quarters environment with well designed, optimised, detailed interior, and one HDRI with stars and a planet.
+This environment was ment for VR, but it can be used in any project.
+
+LOD's used where appropriate.
+
+HDRI_Star_Sky - 2048x2048
+Leather - 1024x1024 (Mask, Normal Map)
+Walls - 2048x2048 (Albedo, Mask, Normal Map, Emissive)
+Gradient - 256x256 (Mask, Emissive)
+
+Couches_Collider - 276 tris
+Couches_LOD0 - 632 tris
+Couches_LOD1 - 333 tris
+
+Lamp - 88 tris
+
+Table_Collider - 48 tris
+Table_LOD0 - 544 tris
+Table_LOD1 - 272 tris
+Table_LOD2 - 120 tris
+
+Chess_table - 300 tris
+
+TV - 184 tris
+
+Design_part_Collider - 212 tris
+Design_part - 558 tris
+
+Base:
+Base - 3286 tris
+Collider - 280 tris
+Hologram - 16 tris
+Railing_01 - 696 tris
+Railing_01_Collider - 128 tris
+Railing_02 - 492 tris
+Railing_02_Collider - 10 tris
+Window_01 - 16 tris
+Window_02 - 112 tris
+Window_03 - 8 tris
+Stairs - 1582 tris
+Shadow_proxy - 444 tris
