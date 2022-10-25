@@ -56,14 +56,15 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Imported/Outline/Scripts/Outline.cs" />
     <Compile Include="Assets/Imported/PathCreator/Examples/Scripts/PathSpawner.cs" />
     <Compile Include="Assets/Script/Extension/MathExtension.cs" />
     <Compile Include="Assets/Script/Controller/RandController.cs" />
-    <Compile Include="Assets/Imported/Winter Zone Mini 1.0/Scripts/EmitterPositionController.cs" />
+    <Compile Include="Assets/Imported/Shader Graph Materials Pack Vol 4/Winter Zone Mini 1.0/Scripts/EmitterPositionController.cs" />
     <Compile Include="Assets/Script/Scan/ScanArchimedeanSpiral.cs" />
     <Compile Include="Assets/Script/IK/IK_FeetUp.cs" />
     <Compile Include="Assets/Script/Scan/ScanArms.cs" />
-    <Compile Include="Assets/Imported/Winter Zone Mini 1.0/Scripts/FXDemoController.cs" />
+    <Compile Include="Assets/Imported/Shader Graph Materials Pack Vol 4/Winter Zone Mini 1.0/Scripts/FXDemoController.cs" />
     <Compile Include="Assets/Script/Player/Spaceship.cs" />
     <Compile Include="Assets/Script/Player/Spider.cs" />
     <Compile Include="Assets/Script/IK/IK.cs" />
@@ -84,7 +85,6 @@
     <Compile Include="Assets/Script/Scan/Scan.cs" />
     <Compile Include="Assets/Script/Extension/PhysicsExtension.cs" />
     <Compile Include="Assets/Imported/PathCreator/Examples/Scripts/RoadMeshCreator.cs" />
-    <Compile Include="Assets/Imported/Outline/Scripts/Outline.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Imported/Polygonmaker/Polygonmaker - Shader/Shaders/Polygonmaker-AS-BasicPBR.shader" />
@@ -107,9 +107,9 @@
     <None Include="Assets/Imported/Shader Graph Materials Pack Vol 4/Procedural Bricks/README.txt" />
     <None Include="Assets/Imported/Polygonmaker/Polygonmaker - Shader/Shaders/Polygonmaker-AS-Ice.shader" />
     <None Include="Assets/Imported/Polygonmaker/Polygonmaker - Shader/Shaders 1.3.txt" />
-    <None Include="Assets/Imported/Winter Zone Mini 1.0/readme.txt" />
+    <None Include="Assets/Imported/Shader Graph Materials Pack Vol 4/Winter Zone Mini 1.0/readme.txt" />
     <None Include="Assets/Imported/Polygonmaker/Polygonmaker - Shader/Shaders/Legacy/Polygonmaker-AS-SkinCutout Defered DoubleSided.shader" />
-    <None Include="Assets/Imported/SkySeries Freebie/Hdri setup.txt" />
+    <None Include="Assets/Imported/PathCreator/SkySeries Freebie/Hdri setup.txt" />
     <None Include="Assets/Imported/VR_Metaverse Space Quarters/Documentation.txt" />
     <None Include="Assets/Imported/Outline/Resources/Shaders/OutlineFill.shader" />
     <None Include="Assets/Imported/Polygonmaker/Polygonmaker - Shader/Shaders/Polygonmaker-AS-BasicPBR_Cutout.shader" />
