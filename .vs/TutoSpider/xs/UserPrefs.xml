@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{E32E9E5A-DEFF-8D80-3CAE-37A7F2802B5E}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/IK/IK_FeetUp.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Player/Spider.cs">
     <Files>
-      <File FileName="Assets/Script/IK/IK_FeetUp.cs" Line="63" Column="33" />
+      <File FileName="Assets/Script/IK/IK_FeetUp.cs" Line="84" Column="36" />
+      <File FileName="Assets/Script/Player/Spider.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="fa9329dd-7f8b-45f7-a1f5-e4b82b078b3d" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="68434325-ea09-4b30-8f97-c28c3fa5d50b" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
