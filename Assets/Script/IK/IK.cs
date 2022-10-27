@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 
 
-
+[ExecuteInEditMode]
 public class IK : MonoBehaviour
 {
     [SerializeField] Transform[] knees;
@@ -12,16 +12,10 @@ public class IK : MonoBehaviour
     List<(float angle, float dist)> distAngle = new List<(float, float)>();
 
 
-    void OnDrawGizmos()
-    {
-        if (feet && target && dir)
-            MatchTarget();
-    }
 
     void OnValidate()
     {
-        if (feet && target && dir)
-            CacheDistAngle();
+        CacheDistAngle();
     }
 
     void Awake()
@@ -37,6 +31,9 @@ public class IK : MonoBehaviour
 
     void CacheDistAngle()
     {
+        if (!feet)
+            return;
+
         distAngle.Clear();
 
         if (angleStep <= 0)
@@ -45,7 +42,7 @@ public class IK : MonoBehaviour
         for (float angle = angleMin; angle < angleMax; angle += angleStep)
             distAngle.Add((angle, FeetDist(angle)));
 
-        SwortDistAngle();
+        //SwortDistAngle();
     }
 
     void SwortDistAngle()
@@ -57,7 +54,7 @@ public class IK : MonoBehaviour
                 (float angle, float dist) left = distAngle[i];
                 (float angle, float dist) right = distAngle[j];
 
-                if (right.dist < left.dist)
+                if (right.dist > left.dist)
                 {
                     distAngle[i] = right;
                     distAngle[j] = left;
@@ -71,17 +68,18 @@ public class IK : MonoBehaviour
         if (distAngle.Count == 0)
             return 0;
 
-        if (dist <= distAngle[0].dist)
+        if (dist >= distAngle[0].dist)
             return distAngle[0].angle;
 
         for (int i = 1; i < distAngle.Count; i++)
         {
-            if (distAngle[i].dist > dist)
+            (float angle, float dist) e1 = distAngle[i];
+
+            if (e1.dist < dist)
             {
-                (float angle, float dist) right = distAngle[i];
-                (float angle, float dist) left  = distAngle[i-1];
-                float progress = Mathf.InverseLerp(left.dist, right.dist, dist);
-                return Mathf.Lerp(left.angle, right.angle, progress);
+                (float angle, float dist) e2 = distAngle[i-1];
+                float progress = Mathf.InverseLerp(e1.dist, e2.dist, dist);
+                return Mathf.Lerp(e1.angle, e2.angle, progress);
             }
         }
 
@@ -91,6 +89,9 @@ public class IK : MonoBehaviour
 
     void MatchTarget()
     {
+        if (!feet || !target || !dir)
+            return;
+
         // find knees angle
         float targetDist = (transform.position - target.position).magnitude;
         SetAngle(LinearSearchAngle(targetDist));
