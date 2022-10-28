@@ -13,7 +13,6 @@ public class Player3D : MonoBehaviour
     [SerializeField] int moveResolution = 1;
     Vector2 velocityNoAdd = Vector2.zero;
     Vector2 velocity = Vector2.zero;
-    float velocityCoef = 1;
     float speed = 0;
     float maxSpeedEstimation;
     float speedProgress;
@@ -33,7 +32,6 @@ public class Player3D : MonoBehaviour
     public Vector2 Velocity { get => velocity; }
     public float Speed { get => speed; }
     public float SpeedProgress { get => speedProgress; }
-    public float VelocityCoef { get => velocityCoef; set => velocityCoef = value; }
 
 
 
@@ -127,7 +125,6 @@ public class Player3D : MonoBehaviour
     void UpdateVeclocity()
     {
         velocity = velocityNoAdd + addVelocity;
-        velocity *= velocityCoef;
         UpdateSpeed();
     }
 
