@@ -331,6 +331,24 @@ TrailRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 3422990104019128492}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4961915187491234986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7736239473171313670, guid: 2afa2260509a19040a2f2e51b9ab7756,
+    type: 3}
+  m_PrefabInstance: {fileID: 3422990104019128492}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7088023812593466655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4961915187491234986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d76cfc6f81bf40ba99b4b9c3417b124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!96 &7835105015320112459 stripped
 TrailRenderer:
   m_CorrespondingSourceObject: {fileID: 4844471471842901479, guid: 2afa2260509a19040a2f2e51b9ab7756,

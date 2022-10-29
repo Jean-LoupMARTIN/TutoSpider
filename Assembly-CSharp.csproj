@@ -61,6 +61,7 @@
     <Compile Include="Assets/Script/Extension/MathExtension.cs" />
     <Compile Include="Assets/Script/Controller/RandController.cs" />
     <Compile Include="Assets/Imported/Shader Graph Materials Pack Vol 4/Winter Zone Mini 1.0/Scripts/EmitterPositionController.cs" />
+    <Compile Include="Assets/Script/Scan/ScanArms.cs" />
     <Compile Include="Assets/Script/Scan/ScanArchimedeanSpiral.cs" />
     <Compile Include="Assets/Script/IK/IK_FeetUp.cs" />
     <Compile Include="Assets/Script/Scan/ScanArmsDuplicate.cs" />
@@ -69,7 +70,8 @@
     <Compile Include="Assets/Script/Player/Spider.cs" />
     <Compile Include="Assets/Script/IK/IK.cs" />
     <Compile Include="Assets/Script/Controller/Controller.cs" />
-    <Compile Include="Assets/Script/CamFollowTarget.cs" />
+    <Compile Include="Assets/Script/Cam/CamFollowTarget.cs" />
+    <Compile Include="Assets/Script/Scan/ScanArmsAdvanced.cs" />
     <Compile Include="Assets/Imported/PathCreator/Examples/Scripts/GeneratePathExample.cs" />
     <Compile Include="Assets/Script/Controller/InputController.cs" />
     <Compile Include="Assets/Script/Player/Player3D.cs" />
@@ -85,8 +87,7 @@
     <Compile Include="Assets/Script/Scan/Scan.cs" />
     <Compile Include="Assets/Script/Extension/PhysicsExtension.cs" />
     <Compile Include="Assets/Imported/PathCreator/Examples/Scripts/RoadMeshCreator.cs" />
-    <Compile Include="Assets/Script/Scan/ScanArms.cs" />
-    <Compile Include="Assets/Script/Scan/ScanArmsAdvanced.cs" />
+    <Compile Include="Assets/Script/Cam/CamTarget.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Imported/Polygonmaker/Polygonmaker - Shader/Shaders/Polygonmaker-AS-BasicPBR.shader" />

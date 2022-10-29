@@ -361,6 +361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2565372339614875861}
+  - component: {fileID: 308689473440162690}
   m_Layer: 0
   m_Name: BodyShadow
   m_TagString: Untagged
@@ -387,6 +388,18 @@ Transform:
   m_Father: {fileID: 230230544497872462}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &308689473440162690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2565372339614875860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d76cfc6f81bf40ba99b4b9c3417b124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2565372339640305862
 GameObject:
   m_ObjectHideFlags: 0
@@ -2741,6 +2754,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   desyncG2: 1
+  updateOrbitsMethode: 0
   arcAngle: 270
   arcRadius: 0.2
   arcResolution: 4

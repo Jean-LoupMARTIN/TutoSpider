@@ -17,6 +17,9 @@ public class Spider : MonoBehaviour
     [SerializeField] AnimationCurve stepHeightCurve;
     [SerializeField, Range(0, 1)] float desyncG2 = 1;
 
+    [SerializeField] UpdateOrbitsMethode updateOrbitsMethode = UpdateOrbitsMethode.LegDistance;
+    enum UpdateOrbitsMethode { LegDistance, Score }
+
     [SerializeField, Range(0, 360)] float arcAngle = 270;
     [SerializeField] float arcRadius = 0.3f;
     [SerializeField] int arcResolution = 4;
@@ -94,13 +97,63 @@ public class Spider : MonoBehaviour
 
     void UpdateOrbits(bool gizmo = false)
     {
-        for (int i = 0; i < orbits.Length; i++)
-            UpdateOrbit(orbits[i], orbits[i].parent, legs[i], orbitsLegsDists[i], orbitsOriginsDists[i], gizmo);
+        if (updateOrbitsMethode == UpdateOrbitsMethode.LegDistance)
+            for (int i = 0; i < orbits.Length; i++)
+                UpdateOrbitLegDistance(orbits[i], orbits[i].parent, legs[i], orbitsLegsDists[i], orbitsOriginsDists[i], gizmo);
+
+        else if (updateOrbitsMethode == UpdateOrbitsMethode.Score)
+            for (int i = 0; i < orbits.Length; i++)
+                UpdateOrbitScore(orbits[i], orbits[i].parent, legs[i], orbitsLegsDists[i], orbitsOriginsDists[i], gizmo);
     }
 
 
 
-    void UpdateOrbit(Transform orbit, Transform orbitOrigin, Transform leg, float distLeg, float distOrigin, bool gizmo = false)
+    void UpdateOrbitScore(Transform orbit, Transform orbitOrigin, Transform leg, float dstLeg, float dstOrigin, bool gizmo = false)
+    {
+        Vector3 pos = orbitOrigin.position;
+        Quaternion rot = orbitOrigin.rotation;
+
+        Quaternion dRot = Quaternion.Inverse(transform.rotation) * rot;
+
+        if (!gizmo)
+        {
+            orbit.position = pos;
+            orbit.rotation = rot * Quaternion.Inverse(dRot);
+        }
+
+        float score = Mathf.Pow((pos - leg.position).magnitude - dstLeg, 2) + Mathf.Pow((pos - orbitOrigin.position).magnitude - dstOrigin, 2);
+        float scoreCrt = score;
+        float scoreMax = (Mathf.Pow(dstLeg, 2) + Mathf.Pow(dstOrigin, 2)) * 1f;
+
+        if (gizmo)
+            Gizmos.color = new Color(1, 0.5f, 0, 0.3f);
+
+        for (int i = 0; i < 50 && scoreCrt < scoreMax; i++)
+        {
+            if (PhysicsExtension.ArcCast(pos, rot, arcAngle, arcRadius, arcResolution, arcLayer, out RaycastHit hit))
+            {
+                if (gizmo)
+                    Gizmos.DrawSphere(hit.point, 0.05f);
+
+                pos = hit.point;
+                rot = Quaternion.FromToRotation(rot * Vector3.up, hit.normal) * rot;
+                scoreCrt = Mathf.Pow((pos - leg.position).magnitude - dstLeg, 2) + Mathf.Pow((pos - orbitOrigin.position).magnitude - dstOrigin, 2);
+
+                if (scoreCrt < score)
+                {
+                    if (!gizmo)
+                    {
+                        orbit.position = pos;
+                        orbit.rotation = rot * Quaternion.Inverse(dRot);
+                    }
+                    score = scoreCrt;
+                }
+            }
+            else return;
+        }
+    }
+
+    void UpdateOrbitLegDistance(Transform orbit, Transform orbitOrigin, Transform leg, float distLeg, float distOrigin, bool gizmo = false)
     {
         Vector3    pos = orbitOrigin.position;
         Quaternion rot = orbitOrigin.rotation;
@@ -294,3 +347,5 @@ public class Spider : MonoBehaviour
     }
 
 }
+
+
