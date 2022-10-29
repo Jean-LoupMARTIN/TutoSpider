@@ -62,6 +62,7 @@
     <Compile Include="Assets/Script/Controller/RandController.cs" />
     <Compile Include="Assets/Imported/Shader Graph Materials Pack Vol 4/Winter Zone Mini 1.0/Scripts/EmitterPositionController.cs" />
     <Compile Include="Assets/Script/Scan/ScanArms.cs" />
+    <Compile Include="Assets/Script/Cam/CamTarget.cs" />
     <Compile Include="Assets/Script/Scan/ScanArchimedeanSpiral.cs" />
     <Compile Include="Assets/Script/IK/IK_FeetUp.cs" />
     <Compile Include="Assets/Script/Scan/ScanArmsDuplicate.cs" />
@@ -87,7 +88,6 @@
     <Compile Include="Assets/Script/Scan/Scan.cs" />
     <Compile Include="Assets/Script/Extension/PhysicsExtension.cs" />
     <Compile Include="Assets/Imported/PathCreator/Examples/Scripts/RoadMeshCreator.cs" />
-    <Compile Include="Assets/Script/Cam/CamTarget.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Imported/Polygonmaker/Polygonmaker - Shader/Shaders/Polygonmaker-AS-BasicPBR.shader" />

@@ -2574,7 +2574,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2766011323459284256}
   - component: {fileID: 2766011323459284257}
-  - component: {fileID: 2766011323459284253}
   - component: {fileID: 2766011323459284255}
   - component: {fileID: 1856979853115791578}
   - component: {fileID: 2766011323459284250}
@@ -2615,7 +2614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db1e0171db36c46af9e433c282a20d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 2766011323459284253}
+  controller: {fileID: 0}
   accelerationForward: 30
   accelerationBack: 30
   accelerationSide: 30
@@ -2630,19 +2629,6 @@ MonoBehaviour:
     m_Bits: 64
   arcTransformRotation: {fileID: 2766011323459284256}
   gizmoDrawArc: 0
---- !u!114 &2766011323459284253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2766011323459284259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dd0d29de94c84da0b7d33898a3f03dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
 --- !u!114 &2766011323459284255
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3914,7 +3914,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5362344328961831775}
-  m_LocalRotation: {x: -0.2474576, y: -0.006396139, z: -0.0015747673, w: 0.96887636}
+  m_LocalRotation: {x: -0.24745761, y: -0.0063960836, z: -0.0015747448, w: 0.9688763}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4259,7 +4259,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5362344330135983160}
-  m_LocalRotation: {x: 0.24748048, y: -0.006363412, z: -0.0015665698, w: -0.96887076}
+  m_LocalRotation: {x: 0.24748054, y: -0.0063634133, z: -0.0015665663, w: -0.9688707}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4378,7 +4378,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5362344330400391301}
-  m_LocalRotation: {x: -0.24944058, y: -0.008580651, z: -0.0022694755, w: 0.96834946}
+  m_LocalRotation: {x: -0.24944061, y: -0.008580649, z: -0.0022694822, w: 0.96834946}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4533,7 +4533,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5362344330536454347}
-  m_LocalRotation: {x: -0.24939145, y: 0.008648958, z: 0.0022866258, w: 0.96836144}
+  m_LocalRotation: {x: -0.2493915, y: 0.008648963, z: 0.0022866158, w: 0.96836144}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5036,7 +5036,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8067415900168435249}
   - component: {fileID: 8067415900168435248}
-  - component: {fileID: 8067415900168435212}
   - component: {fileID: 8067415900168435214}
   - component: {fileID: 1543684170618101622}
   - component: {fileID: 8067415900168435211}
@@ -5077,7 +5076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db1e0171db36c46af9e433c282a20d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 8067415900168435212}
+  controller: {fileID: 0}
   accelerationForward: 10
   accelerationBack: 10
   accelerationSide: 10
@@ -5092,19 +5091,6 @@ MonoBehaviour:
     m_Bits: 64
   arcTransformRotation: {fileID: 8067415900168435249}
   gizmoDrawArc: 0
---- !u!114 &8067415900168435212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8067415900168435250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dd0d29de94c84da0b7d33898a3f03dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
 --- !u!114 &8067415900168435214
 MonoBehaviour:
   m_ObjectHideFlags: 0
