@@ -17,6 +17,12 @@ public class FollowTarget : MonoBehaviour
         lastRotation = transform.rotation;
     }
 
+    void OnDisable()
+    {
+        transform.position = target.position;
+        transform.rotation = target.rotation;
+    }
+
     void FixedUpdate()
     {
         transform.position = Vector3   .Lerp(lastPosition, target.position, positionSpeed * Time.fixedDeltaTime);

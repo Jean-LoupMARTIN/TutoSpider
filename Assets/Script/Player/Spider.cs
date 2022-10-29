@@ -21,12 +21,16 @@ public class Spider : MonoBehaviour
     [SerializeField] float arcRadius = 0.3f;
     [SerializeField] int arcResolution = 4;
     [SerializeField] LayerMask arcLayer;
-    [SerializeField] bool drawGizmos = true;
 
-    [SerializeField] AudioClip[] stepSounds;
+    [SerializeField] AudioClip[] stepStartSounds;
+    [SerializeField] AudioClip[] stepMoveSounds;
+    [SerializeField] AudioClip[] stepEndSounds;
     [SerializeField, Range(0, 1)] float stepSoundSpeedProgress = 0.3f;
     [SerializeField, Range(0, 1)] float stepSoundVolume = 1;
     [SerializeField] float stepSoundPitchMin = 0.9f, stepSoundPitchMax = 1.1f;
+
+    [SerializeField] bool drawGizmos = true;
+
     Player3D player3D;
 
 
@@ -76,6 +80,11 @@ public class Spider : MonoBehaviour
     private void OnEnable()
     {
         StartCoroutine("StepLoop");
+    }
+
+    void OnDisable()
+    {
+        StopAllCoroutines();
     }
 
     void FixedUpdate()
@@ -147,7 +156,12 @@ public class Spider : MonoBehaviour
         if (player3D.Velocity == Vector2.zero)
             return (orbit.position, orbit.rotation);
 
-        Vector3 velocityForward = orbit.TransformVector(new Vector3(player3D.Velocity.x, 0, player3D.Velocity.y));
+        Vector3 velocityForward = orbit.TransformVector(player3D.Velocity3);
+
+        // warning without
+        if (velocityForward == Vector3.zero || velocityForward == orbit.up)
+            return (orbit.position, orbit.rotation);
+
         Vector3 pos = orbit.position;
         Quaternion rot = Quaternion.LookRotation(velocityForward, orbit.up);
 
@@ -238,6 +252,9 @@ public class Spider : MonoBehaviour
         Vector3    targetStartPosProj = leg.InverseTransformPoint(target.position);
         Quaternion targetStartRotProj = Quaternion.Inverse(leg.rotation) * target.rotation;
 
+        PlayStepSound(target.position, stepStartSounds);
+        PlayStepSound(target.position, stepMoveSounds);
+
         while (t < stepTime)
         {
             t += Time.deltaTime;
@@ -258,18 +275,22 @@ public class Spider : MonoBehaviour
                 yield return new WaitForEndOfFrame();
         }
 
-        PlayRandStepSound(target.position);
+        PlayStepSound(target.position, stepEndSounds);
     }
 
-    void PlayRandStepSound(Vector3 pos)
+    void PlayStepSound(Vector3 pos, AudioClip[] sounds)
     {
-        if (stepSounds.Length > 0 && player3D.SpeedProgress > stepSoundSpeedProgress)
-            AudioSourceExtension.PlayClipAtPoint(
-                stepSounds[(int)(Random.value * stepSounds.Length)],
-                pos,
-                Mathf.InverseLerp(stepSoundSpeedProgress, 1, player3D.SpeedProgress) * stepSoundVolume,
-                Random.Range(stepSoundPitchMin, stepSoundPitchMax));
-    }
+        if (sounds.Length == 0 || player3D.SpeedProgress <= stepSoundSpeedProgress)
+            return;
 
+        AudioClip clip = sounds[(int)(Random.value * sounds.Length)];
+        float volume = Mathf.InverseLerp(stepSoundSpeedProgress, 1, player3D.SpeedProgress) * stepSoundVolume;
+        float pitch = Random.Range(stepSoundPitchMin, stepSoundPitchMax);
+
+        if (sounds == stepMoveSounds)
+            pitch *= clip.length / stepTime;
+
+        AudioSourceExtension.PlayClipAtPoint(clip, pos, volume, pitch);
+    }
 
 }

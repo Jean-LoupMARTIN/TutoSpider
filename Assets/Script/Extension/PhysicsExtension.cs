@@ -17,8 +17,6 @@ public static class PhysicsExtension
         B = Quaternion.Euler(dAngle, 0, 0) * forwardRadius;
         AB = B - A;
         float AB_magnitude = AB.magnitude * 1.001f;
-        //float AB_magnitude = AB.magnitude + 0.001f;
-
 
         for (int i = 0; i < resolution; i++)
         {
@@ -38,8 +36,6 @@ public static class PhysicsExtension
             if (drawGizmo)
                 Gizmos.DrawLine(A, B);
         }
-
-        //Debug.Log("ArcCast miss");
 
         hit = new RaycastHit();
         return false;

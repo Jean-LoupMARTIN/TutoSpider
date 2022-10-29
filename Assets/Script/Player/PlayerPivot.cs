@@ -25,6 +25,12 @@ public class PlayerPivot : MonoBehaviour
         }
     }
 
+    void OnDisable()
+    {
+        pivot.localPosition = Vector3.zero;
+        pivot.localRotation = Quaternion.identity;
+    }
+
     void FixedUpdate()
     {
         UpdatePivot();

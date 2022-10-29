@@ -30,6 +30,7 @@ public class Player3D : MonoBehaviour
 
     public Controller Controller { get => controller; }
     public Vector2 Velocity { get => velocity; }
+    public Vector3 Velocity3 { get => new Vector3(velocity.x, 0, velocity.y); }
     public float Speed { get => speed; }
     public float SpeedProgress { get => speedProgress; }
 
@@ -54,6 +55,12 @@ public class Player3D : MonoBehaviour
         EstimateMaxSpeed();
     }
 
+
+    void OnDisable()
+    {
+        velocityNoAdd = Vector3.zero;
+        UpdateVeclocity();
+    }
 
     void FixedUpdate()
     {
@@ -147,7 +154,7 @@ public class Player3D : MonoBehaviour
 
         for (int i = 0; i < moveResolution; i++)
         {
-            Vector3 worldVelocity = arcTransformRotation.TransformVector(new Vector3(velocity.x, 0, velocity.y));
+            Vector3 worldVelocity = arcTransformRotation.TransformVector(Velocity3);
 
             if (PhysicsExtension.ArcCast(transform.position, Quaternion.LookRotation(worldVelocity, arcTransformRotation.up), arcAngle, arcRadius, arcResolution, arcLayer, out RaycastHit hit, gizmo))
             {

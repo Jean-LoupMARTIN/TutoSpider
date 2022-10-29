@@ -7,7 +7,6 @@ public class InputController : Controller
 
     public override Vector2 StickL { get => stickL; }
     public override Vector2 StickR { get => stickR; }
-    public override bool Button1 { get => Input.GetKey(KeyCode.Space); }
 
     void Update()
     {

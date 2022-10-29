@@ -3901,7 +3901,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5362344328961831775}
-  m_LocalRotation: {x: -0.2474577, y: -0.0063960818, z: -0.0015747491, w: 0.9688763}
+  m_LocalRotation: {x: -0.24745782, y: -0.0063960827, z: -0.0015747495, w: 0.9688763}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3931,6 +3931,7 @@ MonoBehaviour:
   angleMin: 10
   angleMax: 180
   angleStep: 5
+  inverseAngle: 0
 --- !u!1 &5362344329058499525
 GameObject:
   m_ObjectHideFlags: 0
@@ -4275,6 +4276,7 @@ MonoBehaviour:
   angleMin: 10
   angleMax: 180
   angleStep: 5
+  inverseAngle: 0
 --- !u!1 &5362344330207280882
 GameObject:
   m_ObjectHideFlags: 0
@@ -4363,7 +4365,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5362344330400391301}
-  m_LocalRotation: {x: -0.24944061, y: -0.008580649, z: -0.0022694822, w: 0.96834946}
+  m_LocalRotation: {x: -0.24944036, y: -0.008580651, z: -0.0022694734, w: 0.96834946}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4393,6 +4395,7 @@ MonoBehaviour:
   angleMin: 10
   angleMax: 180
   angleStep: 5
+  inverseAngle: 0
 --- !u!1 &5362344330453966304
 GameObject:
   m_ObjectHideFlags: 0
@@ -4547,6 +4550,7 @@ MonoBehaviour:
   angleMin: 10
   angleMax: 180
   angleStep: 5
+  inverseAngle: 0
 --- !u!1 &5362344330616830530
 GameObject:
   m_ObjectHideFlags: 0
@@ -5021,7 +5025,7 @@ GameObject:
   - component: {fileID: 8067415900168435248}
   - component: {fileID: 8067415900168435212}
   - component: {fileID: 8067415900168435214}
-  - component: {fileID: 8067415900168435213}
+  - component: {fileID: 1543684170618101622}
   - component: {fileID: 8067415900168435211}
   - component: {fileID: 8067415900168435208}
   m_Layer: 0
@@ -5101,12 +5105,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivot: {fileID: 7642019424106414338}
-  scan: {fileID: 8067415900168435213}
+  scan: {fileID: 1543684170618101622}
   positionWeight: 0.5
   rotationWeight: 1
   echos: 1
   gizmoDrawEchos: 0
---- !u!114 &8067415900168435213
+--- !u!114 &1543684170618101622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5115,21 +5119,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 8067415900168435250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c225bdf5967e4b6caf4690452504b03, type: 3}
+  m_Script: {fileID: 11500000, guid: 040246750d741406f8ae242610538864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weightByDist: 0
   armCount: 11
-  armLenght: 0.6
-  armDuplicateCount: 9
-  armDuplicate: 1
-  armDuplicateAngle: 54
+  armLenght: 5.4
+  armLenghtCoef: {x: 1, y: 1}
+  armPoints: 9
+  player3D: {fileID: 8067415900168435248}
+  armLenghtSpeedCoef: 0
+  weightByDist: 0
   arcAngle: 270
   arcResolution: 4
   arcLayer:
     serializedVersion: 2
     m_Bits: 64
-  gizmoDrawArcCast: 0
   gizmoDrawPoint: 1
   gizmoDrawLink: 1
 --- !u!114 &8067415900168435211
@@ -5205,13 +5209,15 @@ MonoBehaviour:
   arcLayer:
     serializedVersion: 2
     m_Bits: 64
-  drawGizmos: 1
-  stepSounds:
+  stepStartSounds: []
+  stepMoveSounds: []
+  stepEndSounds:
   - {fileID: 8300000, guid: 9a745b78061a2448d92a5accee452d76, type: 3}
   stepSoundSpeedProgress: 0.3
   stepSoundVolume: 0.5
   stepSoundPitchMin: 0.9
   stepSoundPitchMax: 1.1
+  drawGizmos: 1
 --- !u!114 &8067415900168435208
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,11 +3,15 @@ using UnityEngine;
 
 
 
-public class ScanArms : Scan
+public class ScanArmsAdvanced : Scan
 {
     [SerializeField] int armCount = 11;
     [SerializeField] float armLenght = 2f;
+    [SerializeField] Vector2 armLenghtCoef = new Vector2(1, 1);
     [SerializeField] int armPoints = 4;
+
+    [SerializeField] Player3D player3D;
+    [SerializeField] float armLenghtSpeedCoef = 0;
 
     [SerializeField] bool weightByDist = false;
 
@@ -39,11 +43,21 @@ public class ScanArms : Scan
     {
         List<(Vector3 pos, Quaternion rot, float weight)> points = new List<(Vector3, Quaternion, float)>();
 
-        float arcRadius = armLenght / armPoints;
-
         for (int i = 0; i < armCount; i++)
         {
             float angle = 360 * i / armCount;
+            float rad = angle * Mathf.Deg2Rad;
+
+            float arcRadius = armLenght / armPoints;
+            arcRadius *= Mathf.Sqrt(Mathf.Pow(Mathf.Cos(rad), 2) * armLenghtCoef.y +
+                                    Mathf.Pow(Mathf.Sin(rad), 2) * armLenghtCoef.x);
+
+            if (player3D && player3D.Velocity != Vector2.zero)
+            {
+                float angleArmVelocity = Vector3.Angle(player3D.Velocity3, Quaternion.Euler(0, angle, 0) * Vector3.forward);
+                float progress = Mathf.InverseLerp(90, 0, angleArmVelocity);
+                arcRadius += progress * player3D.Speed * armLenghtSpeedCoef;
+            }
 
             Vector3 pos = transform.position;
             Quaternion rot = transform.rotation * Quaternion.Euler(0, angle, 0);

@@ -10,7 +10,6 @@ public class FollowTargetController : Controller
 
     public override Vector2 StickL { get => stickL; }
     public override Vector2 StickR { get => stickR; }
-    public override bool Button1 { get => false; }
 
     public Transform Target { get => target; set => target = value; }
 

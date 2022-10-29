@@ -9,18 +9,19 @@ public class IK : MonoBehaviour
     [SerializeField] Transform[] knees;
     [SerializeField] Transform feet, target, dir;
     [SerializeField] float angleMin = 0, angleMax = 180, angleStep = 5;
-    List<(float angle, float dist)> distAngle = new List<(float, float)>();
+    [SerializeField] bool inverseAngle = false;
+    List<(float angle, float dist)> anglesDistances = new List<(float, float)>();
 
 
 
     void OnValidate()
     {
-        CacheDistAngle();
+        CacheAnglesDistances();
     }
 
     void Awake()
     {
-        CacheDistAngle();
+        CacheAnglesDistances();
     }
 
     void LateUpdate()
@@ -29,62 +30,20 @@ public class IK : MonoBehaviour
     }
 
 
-    void CacheDistAngle()
+    void CacheAnglesDistances()
     {
         if (!feet)
             return;
 
-        distAngle.Clear();
+        anglesDistances.Clear();
 
         if (angleStep <= 0)
             return;
 
         for (float angle = angleMin; angle < angleMax; angle += angleStep)
-            distAngle.Add((angle, FeetDist(angle)));
-
-        //SwortDistAngle();
+            anglesDistances.Add((angle, FeetDist(angle)));
     }
 
-    void SwortDistAngle()
-    {
-        for (int i = 0; i < distAngle.Count - 1; i++)
-        {
-            for (int j = i + 1; j < distAngle.Count; j++)
-            {
-                (float angle, float dist) left = distAngle[i];
-                (float angle, float dist) right = distAngle[j];
-
-                if (right.dist > left.dist)
-                {
-                    distAngle[i] = right;
-                    distAngle[j] = left;
-                }
-            }
-        }
-    }
-
-    float LinearSearchAngle(float dist)
-    {
-        if (distAngle.Count == 0)
-            return 0;
-
-        if (dist >= distAngle[0].dist)
-            return distAngle[0].angle;
-
-        for (int i = 1; i < distAngle.Count; i++)
-        {
-            (float angle, float dist) e1 = distAngle[i];
-
-            if (e1.dist < dist)
-            {
-                (float angle, float dist) e2 = distAngle[i-1];
-                float progress = Mathf.InverseLerp(e1.dist, e2.dist, dist);
-                return Mathf.Lerp(e1.angle, e2.angle, progress);
-            }
-        }
-
-        return distAngle.Last().angle;
-    }
 
 
     void MatchTarget()
@@ -92,15 +51,17 @@ public class IK : MonoBehaviour
         if (!feet || !target || !dir)
             return;
 
-        // find knees angle
-        float targetDist = (transform.position - target.position).magnitude;
-        SetAngle(LinearSearchAngle(targetDist));
+        Vector3 toTarget = target.position - transform.position;
+        float dstToTarget = toTarget.magnitude;
+
+        // set angle
+        SetAngle(FindAngle(dstToTarget));
 
         // look target
-        Vector3 forward = target.position - transform.position;
-        Vector3 up = Vector3.Cross(forward, dir.right);
-        transform.rotation = Quaternion.LookRotation(forward, up);
+        Vector3 up = Vector3.Cross(toTarget, dir.right);
+        transform.rotation = Quaternion.LookRotation(toTarget, up);
 
+        // correct leg rotation
         float angle = Vector3.SignedAngle(transform.forward, feet.position - transform.position, transform.right);
         transform.Rotate(-angle, 0, 0);
     }
@@ -113,7 +74,33 @@ public class IK : MonoBehaviour
 
     void SetAngle(float angle)
     {
+        if (inverseAngle)
+            angle *= -1;
+
         foreach (Transform knee in knees)
             knee.localRotation = Quaternion.Euler(angle, 0, 0);
+    }
+
+    float FindAngle(float dist)
+    {
+        if (anglesDistances.Count == 0)
+            return 0;
+
+        if (dist >= anglesDistances[0].dist)
+            return anglesDistances[0].angle;
+
+        for (int i = 1; i < anglesDistances.Count; i++)
+        {
+            (float angle, float dist) e1 = anglesDistances[i];
+
+            if (e1.dist < dist)
+            {
+                (float angle, float dist) e2 = anglesDistances[i-1];
+                float progress = Mathf.InverseLerp(e1.dist, e2.dist, dist);
+                return Mathf.Lerp(e1.angle, e2.angle, progress);
+            }
+        }
+
+        return anglesDistances.Last().angle;
     }
 }

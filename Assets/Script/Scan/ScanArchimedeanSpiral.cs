@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +14,6 @@ public class ScanArchimedeanSpiral : Scan
     [SerializeField] int arcResolution = 4;
     [SerializeField] LayerMask arcLayer;
 
-    [SerializeField] bool gizmoDrawArcCast = false;
     [SerializeField] bool gizmoDrawPoint = true;
     [SerializeField] bool gizmoDrawLink = true;
 
@@ -53,7 +51,7 @@ public class ScanArchimedeanSpiral : Scan
 
             AB = B - A;
 
-            if (PhysicsExtension.ArcCast(pos, rot, arcAngle, AB.magnitude, arcResolution, arcLayer, out RaycastHit hit, gizmo && gizmoDrawArcCast))
+            if (PhysicsExtension.ArcCast(pos, rot, arcAngle, AB.magnitude, arcResolution, arcLayer, out RaycastHit hit))
             {
                 float weight = weightByDist ? 1 - progress : 1;
 

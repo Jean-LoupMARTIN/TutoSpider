@@ -614,6 +614,7 @@ MonoBehaviour:
   angleMin: 10
   angleMax: 90
   angleStep: 5
+  inverseAngle: 0
 --- !u!1 &2565372339893484799
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,6 +823,7 @@ MonoBehaviour:
   angleMin: 10
   angleMax: 90
   angleStep: 5
+  inverseAngle: 0
 --- !u!1 &2565372339942507375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,6 +1489,7 @@ MonoBehaviour:
   angleMin: 10
   angleMax: 90
   angleStep: 5
+  inverseAngle: 0
 --- !u!1 &2565372340908109399
 GameObject:
   m_ObjectHideFlags: 0
@@ -2560,7 +2563,7 @@ GameObject:
   - component: {fileID: 2766011323459284257}
   - component: {fileID: 2766011323459284253}
   - component: {fileID: 2766011323459284255}
-  - component: {fileID: 2766011323459284252}
+  - component: {fileID: 1856979853115791578}
   - component: {fileID: 2766011323459284250}
   - component: {fileID: 2766011323459284251}
   m_Layer: 0
@@ -2640,12 +2643,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivot: {fileID: 2565372340361796115}
-  scan: {fileID: 2766011323459284252}
+  scan: {fileID: 1856979853115791578}
   positionWeight: 0.5
   rotationWeight: 1
   echos: 1
   gizmoDrawEchos: 0
---- !u!114 &2766011323459284252
+--- !u!114 &1856979853115791578
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2654,23 +2657,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 2766011323459284259}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c225bdf5967e4b6caf4690452504b03, type: 3}
+  m_Script: {fileID: 11500000, guid: 040246750d741406f8ae242610538864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weightByDist: 0
   armCount: 11
-  armLenght: 0.6
-  armDuplicateCount: 4
-  armDuplicate: 1
-  armDuplicateAngle: 54
+  armLenght: 2.4
+  armLenghtCoef: {x: 1, y: 1}
+  armPoints: 4
+  player3D: {fileID: 2766011323459284257}
+  armLenghtSpeedCoef: 0
+  weightByDist: 0
   arcAngle: 270
   arcResolution: 4
   arcLayer:
     serializedVersion: 2
     m_Bits: 64
-  gizmoDrawArcCast: 0
-  gizmoDrawPoint: 0
-  gizmoDrawLink: 0
+  gizmoDrawPoint: 1
+  gizmoDrawLink: 1
 --- !u!114 &2766011323459284250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2744,13 +2747,15 @@ MonoBehaviour:
   arcLayer:
     serializedVersion: 2
     m_Bits: 64
-  drawGizmos: 1
-  stepSounds:
+  stepStartSounds: []
+  stepMoveSounds: []
+  stepEndSounds:
   - {fileID: 8300000, guid: 65fd1d4aba6bc4330b0ab5ceb9b63e28, type: 3}
   stepSoundSpeedProgress: 0.3
   stepSoundVolume: 0.5
   stepSoundPitchMin: 0.8
   stepSoundPitchMax: 0.85
+  drawGizmos: 1
 --- !u!114 &2766011323459284251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2832,6 +2837,7 @@ MonoBehaviour:
   angleMin: 10
   angleMax: 90
   angleStep: 5
+  inverseAngle: 0
 --- !u!1 &6627919678310548900
 GameObject:
   m_ObjectHideFlags: 0

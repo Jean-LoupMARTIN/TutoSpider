@@ -23,6 +23,12 @@ public class ShakeBody : MonoBehaviour
         Cache();
     }
 
+    void OnDisable()
+    {
+        body.localPosition = bodyLocalPos;
+        body.localRotation = bodyLocalRot;
+    }
+
 
     void Cache()
     {
@@ -33,11 +39,6 @@ public class ShakeBody : MonoBehaviour
     }
 
     void FixedUpdate()
-    {
-        UpdateBody();
-    }
-
-    void UpdateBody()
     {
         body.localPosition = bodyLocalPos + Vector3   .Lerp(bodyShakeIdle.Pos(timeOffset), bodyShakeMove.Pos(timeOffset), player3D.SpeedProgress);
         body.localRotation = bodyLocalRot * Quaternion.Lerp(bodyShakeIdle.Rot(timeOffset), bodyShakeMove.Rot(timeOffset), player3D.SpeedProgress);

@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3422990104426301423}
   - component: {fileID: 3422990104426301421}
   - component: {fileID: 3422990104426301422}
-  - component: {fileID: 3422990104426301409}
+  - component: {fileID: 5363311198402903797}
   - component: {fileID: 3422990104426301418}
   m_Layer: 0
   m_Name: Spaceship
@@ -122,12 +122,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivot: {fileID: 3422990104391531346}
-  scan: {fileID: 3422990104426301409}
+  scan: {fileID: 5363311198402903797}
   positionWeight: 0
   rotationWeight: 1
   echos: 1
   gizmoDrawEchos: 1
---- !u!114 &3422990104426301409
+--- !u!114 &5363311198402903797
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,21 +136,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 3422990104426301408}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c225bdf5967e4b6caf4690452504b03, type: 3}
+  m_Script: {fileID: 11500000, guid: 040246750d741406f8ae242610538864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weightByDist: 0
   armCount: 11
-  armLenght: 1
-  armDuplicateCount: 3
-  armDuplicate: 1
-  armDuplicateAngle: 54
+  armLenght: 3
+  armLenghtCoef: {x: 1, y: 1}
+  armPoints: 4
+  player3D: {fileID: 3422990104426301423}
+  armLenghtSpeedCoef: 0
+  weightByDist: 0
   arcAngle: 270
   arcResolution: 4
   arcLayer:
     serializedVersion: 2
     m_Bits: 64
-  gizmoDrawArcCast: 0
   gizmoDrawPoint: 1
   gizmoDrawLink: 1
 --- !u!114 &3422990104426301418
