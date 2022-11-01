@@ -276,13 +276,13 @@ public class Spider : MonoBehaviour
 
         while (true)
         {
-            G1 = !G1;
-
             for (int i = 0; i < targets.Length; i++)
                 if (targetsG1.Contains(targets[i]) == G1)
                     StartCoroutine(DelayStep(i, stepTime * stepDelayRand * Random.value));
 
             yield return new WaitForSeconds(stepTime * (G1 ? desyncG2 : 2 - desyncG2));
+
+            G1 = !G1;
         }
     }
 
