@@ -1,8 +1,12 @@
 ﻿<Properties StartupConfiguration="{E32E9E5A-DEFF-8D80-3CAE-37A7F2802B5E}|">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Controller/RandController.cs">
+    <Files>
+      <File FileName="Assets/Script/Controller/RandController.cs" Line="57" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6872830a-442e-4ece-bd3e-c925d531e5de" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1d4d91b7-c403-4749-bef1-9f5a8712c91d" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

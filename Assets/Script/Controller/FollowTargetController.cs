@@ -11,7 +11,13 @@ public class FollowTargetController : Controller
     public override Vector2 StickL { get => stickL; }
     public override Vector2 StickR { get => stickR; }
 
+    public override bool Button1Down => false;
+    public override bool Button1Up => false;
+    public override bool Button1 => false;
+
     public Transform Target { get => target; set => target = value; }
+
+
 
     void Update()
     {
