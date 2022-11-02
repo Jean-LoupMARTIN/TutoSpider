@@ -9,19 +9,6 @@ public class PlayerPivot : MonoBehaviour
     [SerializeField] Scan scan;
     [SerializeField, Range(0, 1)] float positionWeight = 0;
     [SerializeField, Range(0, 1)] float rotationWeight = 1;
-    [SerializeField] bool gizmoDrawEchos = true;
-
-    List<(Vector3 pos, Quaternion rot, float weight)> points = new List<(Vector3, Quaternion, float)>();
-
-    void OnDrawGizmosSelected()
-    {
-        if (gizmoDrawEchos)
-        {
-            Gizmos.color = Color.yellow;
-            foreach ((Vector3 pos, Quaternion rot, float weight) point in points)
-                Gizmos.DrawSphere(point.pos, 0.1f);
-        }
-    }
 
     void OnDisable()
     {
@@ -36,7 +23,7 @@ public class PlayerPivot : MonoBehaviour
 
     void UpdatePivot()
     {
-        points = scan.Points();
+        List<(Vector3 pos, Quaternion rot, float weight)> points = scan.Points();
 
         Quaternion rotAvg;
         List<Quaternion> rots = new List<Quaternion>();

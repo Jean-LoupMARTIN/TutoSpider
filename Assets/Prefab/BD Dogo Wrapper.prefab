@@ -882,7 +882,6 @@ MonoBehaviour:
   scan: {fileID: 5885743490982858915}
   positionWeight: 0.5
   rotationWeight: 1
-  gizmoDrawEchos: 0
 --- !u!114 &5885743490982858915
 MonoBehaviour:
   m_ObjectHideFlags: 0
