@@ -62,7 +62,7 @@ public class ScanArchimedeanSpiral : Scan
                     Gizmos.DrawLine(pos, hit.point);
 
                 pos = hit.point;
-                rot = Quaternion.FromToRotation(rot * Vector3.up, hit.normal) * rot;
+                rot.MatchUp(hit.normal);
 
                 points.Add((pos, rot * Quaternion.Euler(0, -angle, 0), weight));
 

@@ -136,7 +136,7 @@ public class Spider : MonoBehaviour
                     Gizmos.DrawSphere(hit.point, 0.05f);
 
                 pos = hit.point;
-                rot = Quaternion.FromToRotation(rot * Vector3.up, hit.normal) * rot;
+                rot.MatchUp(hit.normal);
                 scoreCrt = Mathf.Pow((pos - leg.position).magnitude - dstLeg, 2) + Mathf.Pow((pos - orbitOrigin.position).magnitude - dstOrigin, 2);
 
                 if (scoreCrt < score)
@@ -174,7 +174,7 @@ public class Spider : MonoBehaviour
                 }
 
                 Vector3 nextPos = hit.point;
-                Quaternion nextRot = Quaternion.FromToRotation(rot * Vector3.up, hit.normal) * rot;
+                Quaternion nextRot = MathExtension.RotationMatchUp(rot, hit.normal);
                 float nextDist = (nextPos - leg.position).magnitude;
 
                 if (checkSup == nextDist > distLeg)
@@ -234,8 +234,8 @@ public class Spider : MonoBehaviour
 
                 if (distCrt >= dist)
                 {
-                    Vector3    nextPos = hit.point;
-                    Quaternion nextRot = Quaternion.FromToRotation(rot * Vector3.up, hit.normal) * rot;
+                    Vector3 nextPos = hit.point;
+                    Quaternion nextRot = MathExtension.RotationMatchUp(rot, hit.normal);
 
                     float progress = Mathf.InverseLerp(0, distCrt, dist);
 
@@ -254,7 +254,7 @@ public class Spider : MonoBehaviour
                 dist -= distCrt;
 
                 pos = hit.point;
-                rot = Quaternion.FromToRotation(rot * Vector3.up, hit.normal) * rot;
+                rot.MatchUp(hit.normal);
             }
             else break;
         }

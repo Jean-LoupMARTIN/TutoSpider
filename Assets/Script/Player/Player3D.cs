@@ -159,7 +159,7 @@ public class Player3D : MonoBehaviour
             if (PhysicsExtension.ArcCast(transform.position, Quaternion.LookRotation(worldVelocity, arcTransformRotation.up), arcAngle, arcRadius, arcResolution, arcLayer, out RaycastHit hit, gizmo))
             {
                 transform.position = hit.point;
-                transform.rotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
+                transform.MatchUp(hit.normal);
             }
         }
 
