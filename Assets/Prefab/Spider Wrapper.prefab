@@ -2620,7 +2620,6 @@ MonoBehaviour:
   accelerationSide: 30
   friction: 5
   addVelocity: {x: 0, y: 0}
-  moveResolution: 1
   rotationSpeed: 90
   arcAngle: 270
   arcResolution: 6
@@ -2628,7 +2627,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   arcTransformRotation: {fileID: 2766011323459284256}
-  gizmoDrawArc: 0
 --- !u!114 &2766011323459284255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2645,7 +2643,6 @@ MonoBehaviour:
   scan: {fileID: 1856979853115791578}
   positionWeight: 0.5
   rotationWeight: 1
-  echos: 1
   gizmoDrawEchos: 0
 --- !u!114 &1856979853115791578
 MonoBehaviour:

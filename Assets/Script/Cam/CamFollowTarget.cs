@@ -26,7 +26,7 @@ public class CamFollowTarget : MonoBehaviour
         rotProj = Quaternion.Inverse(target.rotation) * transform.rotation;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         Quaternion rot = target.rotation * rotProj;
 
@@ -36,7 +36,7 @@ public class CamFollowTarget : MonoBehaviour
         if (Physics.Raycast(target.position, dir, out RaycastHit hit, dir.magnitude, layer))
             pos = hit.point;
 
-        transform.position = Vector3   .Lerp(transform.position, pos, Time.fixedDeltaTime * positionSpeed);
-        transform.rotation = Quaternion.Lerp(transform.rotation, rot, Time.fixedDeltaTime * rotationSpeed);
+        transform.position = Vector3   .Lerp(transform.position, pos, Time.deltaTime * positionSpeed);
+        transform.rotation = Quaternion.Lerp(transform.rotation, rot, Time.deltaTime * rotationSpeed);
     }
 }

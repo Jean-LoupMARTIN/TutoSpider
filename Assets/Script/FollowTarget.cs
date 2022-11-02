@@ -23,10 +23,10 @@ public class FollowTarget : MonoBehaviour
         transform.rotation = target.rotation;
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        transform.position = Vector3   .Lerp(lastPosition, target.position, positionSpeed * Time.fixedDeltaTime);
-        transform.rotation = Quaternion.Lerp(lastRotation, target.rotation, rotationSpeed * Time.fixedDeltaTime);
+        transform.position = Vector3   .Lerp(lastPosition, target.position, positionSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(lastRotation, target.rotation, rotationSpeed * Time.deltaTime);
         lastPosition = transform.position;
         lastRotation = transform.rotation;
     }

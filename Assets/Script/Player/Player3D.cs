@@ -10,7 +10,6 @@ public class Player3D : MonoBehaviour
     [SerializeField] float accelerationSide = 40;
     [SerializeField] float friction = 5;
     [SerializeField] Vector2 addVelocity = Vector2.zero;
-    [SerializeField] int moveResolution = 1;
     Vector2 velocityNoAdd = Vector2.zero;
     Vector2 velocity = Vector2.zero;
     float speed = 0;
@@ -24,26 +23,12 @@ public class Player3D : MonoBehaviour
     [SerializeField] LayerMask arcLayer;
     [SerializeField] Transform arcTransformRotation;
 
-    [SerializeField] bool gizmoDrawArc = true;
-
-
-
     public Controller Controller { get => controller; }
     public Vector2 Velocity { get => velocity; }
     public Vector3 Velocity3 { get => new Vector3(velocity.x, 0, velocity.y); }
     public float Speed { get => speed; }
     public float SpeedProgress { get => speedProgress; }
 
-
-
-    void OnDrawGizmosSelected()
-    {
-        if (gizmoDrawArc)
-        {
-            Gizmos.color = Color.red;
-            ApplyVelocity(true);
-        }
-    }
 
     void OnValidate()
     {
@@ -62,13 +47,17 @@ public class Player3D : MonoBehaviour
         UpdateVeclocity();
     }
 
+    void Update()
+    {
+        ApplyVelocity();
+        Rotate();
+    }
+
     void FixedUpdate()
     {
         ApplyAcceleration();
         ApplyFriction();
         UpdateVeclocity();
-        ApplyVelocity();
-        Rotate();
     }
 
     void EstimateMaxSpeed()
@@ -141,32 +130,18 @@ public class Player3D : MonoBehaviour
         speedProgress = Mathf.Clamp01(speed / maxSpeedEstimation);
     }
 
-    void ApplyVelocity(bool gizmo = false)
+    void ApplyVelocity()
     {
         if (velocity == Vector2.zero)
             return;
 
-        float arcRadius = speed * Time.fixedDeltaTime / moveResolution;
+        float arcRadius = speed * Time.deltaTime;
+        Vector3 worldVelocity = arcTransformRotation.TransformVector(Velocity3);
 
-        if (gizmo) arcRadius = speed * Time.fixedDeltaTime / moveResolution * 5;
-        Vector3    posMem = transform.position;
-        Quaternion rotMem = transform.rotation;
-
-        for (int i = 0; i < moveResolution; i++)
+        if (PhysicsExtension.ArcCast(transform.position, Quaternion.LookRotation(worldVelocity, arcTransformRotation.up), arcAngle, arcRadius, arcResolution, arcLayer, out RaycastHit hit))
         {
-            Vector3 worldVelocity = arcTransformRotation.TransformVector(Velocity3);
-
-            if (PhysicsExtension.ArcCast(transform.position, Quaternion.LookRotation(worldVelocity, arcTransformRotation.up), arcAngle, arcRadius, arcResolution, arcLayer, out RaycastHit hit, gizmo))
-            {
-                transform.position = hit.point;
-                transform.MatchUp(hit.normal);
-            }
-        }
-
-        if (gizmo)
-        {
-            transform.position = posMem;
-            transform.rotation = rotMem;
+            transform.position = hit.point;
+            transform.MatchUp(hit.normal);
         }
     }
 
@@ -178,6 +153,6 @@ public class Player3D : MonoBehaviour
         Vector2 stickR = controller.StickR;
 
         if (stickR.x != 0)
-            transform.Rotate(0, rotationSpeed * Time.fixedDeltaTime * stickR.x, 0);
+            transform.Rotate(0, rotationSpeed * Time.deltaTime * stickR.x, 0);
     }
 }

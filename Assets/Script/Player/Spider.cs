@@ -90,7 +90,7 @@ public class Spider : MonoBehaviour
         StopAllCoroutines();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         UpdateOrbits();
     }

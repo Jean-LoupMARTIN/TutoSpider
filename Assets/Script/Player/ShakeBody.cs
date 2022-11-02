@@ -38,7 +38,7 @@ public class ShakeBody : MonoBehaviour
         timeOffset = UnityEngine.Random.value * 1000;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         body.localPosition = bodyLocalPos + Vector3   .Lerp(bodyShakeIdle.Pos(timeOffset), bodyShakeMove.Pos(timeOffset), player3D.SpeedProgress);
         body.localRotation = bodyLocalRot * Quaternion.Lerp(bodyShakeIdle.Rot(timeOffset), bodyShakeMove.Rot(timeOffset), player3D.SpeedProgress);

@@ -49,14 +49,15 @@ public class Spaceship : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+
+    void Update()
     {
-        angle -= (angleAcceMoveSide * player3D.Controller.StickL.x + angleAcceRotate * player3D.Controller.StickR.x) * Time.fixedDeltaTime;
-        angle -= angle * Time.fixedDeltaTime * angleFriction;
+        angle -= (angleAcceMoveSide * player3D.Controller.StickL.x + angleAcceRotate * player3D.Controller.StickR.x) * Time.deltaTime;
+        angle -= angle * Time.deltaTime * angleFriction;
         body.localRotation = Quaternion.Euler(0, 0, angle);
 
-        speed += Time.fixedDeltaTime * Mathf.Max(player3D.Controller.StickL.y, 0);
-        speed -= Time.fixedDeltaTime * speed * accelerationFriction;
+        speed += Time.deltaTime * Mathf.Max(player3D.Controller.StickL.y, 0);
+        speed -= Time.deltaTime * speed * accelerationFriction;
         speedProgress = speed / maxSpeedEstimation;
 
         if (postPro)

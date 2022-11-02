@@ -9,19 +9,17 @@ public class PlayerPivot : MonoBehaviour
     [SerializeField] Scan scan;
     [SerializeField, Range(0, 1)] float positionWeight = 0;
     [SerializeField, Range(0, 1)] float rotationWeight = 1;
-    [SerializeField] float echos = 1;
     [SerializeField] bool gizmoDrawEchos = true;
 
-    List<List<(Vector3 pos, Quaternion rot, float weight)>> pointsEchos = new List<List<(Vector3, Quaternion, float)>>();
+    List<(Vector3 pos, Quaternion rot, float weight)> points = new List<(Vector3, Quaternion, float)>();
 
     void OnDrawGizmosSelected()
     {
         if (gizmoDrawEchos)
         {
             Gizmos.color = Color.yellow;
-            foreach (List<(Vector3, Quaternion, float)> points in pointsEchos)
-                foreach ((Vector3 pos, Quaternion rot, float weight) point in points)
-                    Gizmos.DrawSphere(point.pos, 0.1f);
+            foreach ((Vector3 pos, Quaternion rot, float weight) point in points)
+                Gizmos.DrawSphere(point.pos, 0.1f);
         }
     }
 
@@ -31,17 +29,14 @@ public class PlayerPivot : MonoBehaviour
         pivot.localRotation = Quaternion.identity;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         UpdatePivot();
     }
 
     void UpdatePivot()
     {
-        pointsEchos.Add(scan.Points());
-
-        while (pointsEchos.Count > echos)
-            pointsEchos.RemoveAt(0);
+        points = scan.Points();
 
         Quaternion rotAvg;
         List<Quaternion> rots = new List<Quaternion>();
@@ -50,14 +45,12 @@ public class PlayerPivot : MonoBehaviour
         Vector3 posAvg = Vector3.zero;
         int nbPoint = 0;
 
-        foreach (List<(Vector3, Quaternion, float)> points in pointsEchos) {
-            foreach ((Vector3 pos, Quaternion rot, float weight) point in points)
-            {
-                rots.Add(point.rot);
-                weights.Add(point.weight);
-                posAvg += point.pos;
-                nbPoint++;
-            }
+        foreach ((Vector3 pos, Quaternion rot, float weight) point in points)
+        {
+            rots.Add(point.rot);
+            weights.Add(point.weight);
+            posAvg += point.pos;
+            nbPoint++;
         }
 
         posAvg /= nbPoint;
