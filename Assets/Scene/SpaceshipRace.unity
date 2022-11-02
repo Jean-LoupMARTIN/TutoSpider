@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 381763552}
   - component: {fileID: 381763551}
   m_Layer: 0
-  m_Name: InputController
+  m_Name: KeyboardController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

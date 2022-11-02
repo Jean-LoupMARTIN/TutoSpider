@@ -1,13 +1,8 @@
 ﻿<Properties StartupConfiguration="{E32E9E5A-DEFF-8D80-3CAE-37A7F2802B5E}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Player/Player3D.cs">
-    <Files>
-      <File FileName="Assets/Script/Player/Spider.cs" Line="109" Column="1" />
-      <File FileName="Assets/Script/Player/Player3D.cs" Line="159" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5204c53d-b2fa-41c9-af45-e6c47341f686" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6872830a-442e-4ece-bd3e-c925d531e5de" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

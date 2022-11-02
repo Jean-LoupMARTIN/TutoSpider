@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class InputController : Controller
+public class KeyboardController : Controller
 {
     Vector2 stickL, stickR;
 
