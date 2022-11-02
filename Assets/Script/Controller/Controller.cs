@@ -22,9 +22,6 @@ public abstract class Controller : MonoBehaviour
 
     void SetButton1(bool b)
     {
-        if (b == button1)
-            return;
-
         button1Down = !button1 && b;
         button1Up = button1 && !b;
         button1 = b;
