@@ -17,12 +17,16 @@ public class KeyboardController : Controller
 
     Vector2 stickL, stickR;
 
+    bool b1Down = false;
+    bool b1Up = false;
+    bool b1 = false;
+
     public override Vector2 StickL { get => stickL; }
     public override Vector2 StickR { get => stickR; }
 
-    public override bool Button1Down    => Input.GetKeyDown(button1);
-    public override bool Button1Up      => Input.GetKeyUp(button1);
-    public override bool Button1        => Input.GetKey(button1);
+    public override bool Button1Down => b1Down;
+    public override bool Button1Up => b1Up;
+    public override bool Button1 => b1;
 
     void Update()
     {
@@ -41,6 +45,30 @@ public class KeyboardController : Controller
 
         if (stickL != Vector2.zero) stickL.Normalize();
         if (stickR != Vector2.zero) stickR.Normalize();
+
+
+        bool nextB1 = Input.GetKey(button1);
+
+        if (!b1 && nextB1)
+        {
+            b1Down = true;
+            b1Up = false;
+        }
+
+        else if (b1 && !nextB1)
+        {
+            b1Down = false;
+            b1Up = true;
+        }
+
+        else
+        {
+            b1Down = false;
+            b1Up = false;
+        }
+
+        b1 = nextB1;
     }
+
 
 }
