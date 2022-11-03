@@ -13,6 +13,6 @@ public static class AudioSourceExtension
         source.pitch = pitch;
         source.clip = clip;
         source.Play();
-        Object.Destroy(source.gameObject, clip.length); 
+        Object.Destroy(source.gameObject, clip.length / pitch); 
     }
 }
