@@ -17,6 +17,8 @@ public class ShakeBody : MonoBehaviour
     Quaternion bodyLocalRot;
     float timeOffset;
 
+    public Transform Body { get => body; }
+
 
     void Awake()
     {

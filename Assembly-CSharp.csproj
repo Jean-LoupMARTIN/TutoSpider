@@ -88,6 +88,7 @@
     <Compile Include="Assets/Script/Scan/Scan.cs" />
     <Compile Include="Assets/Script/Extension/PhysicsExtension.cs" />
     <Compile Include="Assets/Imported/PathCreator/Examples/Scripts/RoadMeshCreator.cs" />
+    <Compile Include="Assets/Script/Player/PlayerJump.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Imported/Polygonmaker/Polygonmaker - Shader/Shaders/Polygonmaker-AS-BasicPBR.shader" />

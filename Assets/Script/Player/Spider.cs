@@ -37,6 +37,9 @@ public class Spider : MonoBehaviour
     Player3D player3D;
 
 
+    public Transform[] Targets { get => targets; }
+    public Transform[] TargetsG1 { get => targetsG1; }
+    public Transform[] Orbits { get => orbits; }
 
 
     void OnDrawGizmosSelected()
@@ -95,7 +98,7 @@ public class Spider : MonoBehaviour
         UpdateOrbits();
     }
 
-    void UpdateOrbits(bool gizmo = false)
+    public void UpdateOrbits(bool gizmo = false)
     {
         if (updateOrbitsMethode == UpdateOrbitsMethode.LegDistance)
             for (int i = 0; i < orbits.Length; i++)
@@ -204,7 +207,7 @@ public class Spider : MonoBehaviour
         }
     }
 
-    (Vector3, Quaternion) EndStep(Transform orbit, bool gizmo = false)
+    public (Vector3, Quaternion) EndStep(Transform orbit, bool gizmo = false)
     {
         if (player3D.Velocity == Vector2.zero)
             return (orbit.position, orbit.rotation);

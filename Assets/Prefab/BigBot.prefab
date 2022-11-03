@@ -3545,6 +3545,7 @@ MonoBehaviour:
   angleMin: 10
   angleMax: 180
   angleStep: 5
+  inverseAngle: 0
 --- !u!1 &6687706912573382440
 GameObject:
   m_ObjectHideFlags: 0
@@ -3663,6 +3664,7 @@ MonoBehaviour:
   angleMin: 10
   angleMax: 180
   angleStep: 5
+  inverseAngle: 0
 --- !u!1 &6687706912819002426
 GameObject:
   m_ObjectHideFlags: 0
@@ -3782,6 +3784,7 @@ MonoBehaviour:
   angleMin: 10
   angleMax: 180
   angleStep: 5
+  inverseAngle: 0
 --- !u!1 &6687706912890972359
 GameObject:
   m_ObjectHideFlags: 0
@@ -4418,6 +4421,7 @@ MonoBehaviour:
   angleMin: 10
   angleMax: 180
   angleStep: 5
+  inverseAngle: 0
 --- !u!1001 &552775927754342676
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -24,6 +24,12 @@ public class Player3D : MonoBehaviour
     [SerializeField] Transform arcTransformRotation;
 
     public Controller Controller { get => controller; }
+    public Vector2 VelocityNoAdd { get => VelocityNoAdd;
+        set {
+            velocityNoAdd = value;
+            UpdateVeclocity();
+        }
+    }
     public Vector2 Velocity { get => velocity; }
     public Vector3 Velocity3 { get => new Vector3(velocity.x, 0, velocity.y); }
     public float Speed { get => speed; }

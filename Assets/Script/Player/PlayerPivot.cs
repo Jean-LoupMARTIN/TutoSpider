@@ -10,6 +10,8 @@ public class PlayerPivot : MonoBehaviour
     [SerializeField, Range(0, 1)] float positionWeight = 0;
     [SerializeField, Range(0, 1)] float rotationWeight = 1;
 
+    public Transform Pivot { get => pivot; }
+
     void OnDisable()
     {
         pivot.localPosition = Vector3.zero;
