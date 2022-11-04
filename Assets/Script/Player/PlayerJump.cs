@@ -111,15 +111,11 @@ public class PlayerJump : MonoBehaviour
 
         AudioSourceExtension.PlayClipAtPoint(jumpSound, transform.position);
 
-        StartCoroutine("TargetsJump");
-
         StartCoroutine("Jumping");
     }
 
     void JumpEnd()
     {
-        StopCoroutine("TargetsJump");
-
         AudioSourceExtension.PlayClipAtPoint(landingSound, transform.position);
 
         // reset body rotation
@@ -165,17 +161,18 @@ public class PlayerJump : MonoBehaviour
         body.MatchUp(velocity);
 
         AudioSourceExtension.PlayClipAtPoint(jumpSound, transform.position);
-
-        StopCoroutine("TargetsJump");
-        StartCoroutine("TargetsJump");
     }
+
 
     IEnumerator Jumping()
     {
         int airJumpCount = this.airJumpCount;
+        float jumpTime = 0;
 
         while (true)
         {
+            jumpTime += Time.deltaTime;
+
             LandingEstimation();
             ApplyGravity();
             ApplyAcceleration();
@@ -205,12 +202,15 @@ public class PlayerJump : MonoBehaviour
                 body.rotation = Quaternion.Lerp(body.rotation, bodyTargetRotation, landingProgress);
             }
 
+            UpdateTargets(jumpTime);
+
             yield return new WaitForEndOfFrame();
 
             if (airJumpCount > 0 && controller.Button1Down)
             {
                 AirJump();
                 airJumpCount--;
+                jumpTime = 0;
             }
         }
 
@@ -345,24 +345,15 @@ public class PlayerJump : MonoBehaviour
         player3D.VelocityNoAdd = new Vector2(velocity.x, velocity.z);
     }
 
-    IEnumerator TargetsJump()
+
+    void UpdateTargets(float jumpTime)
     {
-        for (float t = 0;  t < targetsJumpTime; t += Time.deltaTime)
-        {
-            float progress = t / targetsJumpTime;
-
-            for (int i = 0; i < targets.Length; i++)
-                targets[i].position = Vector3.Lerp(targetsJumpDown[i].position, targetsJumpUp[i].position, targetsJumpCurve.Evaluate(progress));
-
-            yield return new WaitForEndOfFrame();
-        }
-
-        while (true)
-        {
+        if (jumpTime >= targetsJumpTime)
             for (int i = 0; i < targets.Length; i++)
                 targets[i].position = targetsJumpDown[i].position;
 
-            yield return new WaitForEndOfFrame();
-        }
+        else
+            for (int i = 0; i < targets.Length; i++)
+                targets[i].position = Vector3.Lerp(targetsJumpDown[i].position, targetsJumpUp[i].position, targetsJumpCurve.Evaluate(jumpTime / targetsJumpTime));
     }
 }
