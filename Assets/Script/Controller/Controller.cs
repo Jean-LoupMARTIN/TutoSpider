@@ -32,8 +32,8 @@ public abstract class Controller : MonoBehaviour
     public void SetButton2(bool b) => SetButton(b, ref button2, ref button2Down, ref button2Up);
     public void SetButton(bool b, ref bool button, ref bool buttonDown, ref bool buttonUp)
     {
-        buttonDown = !button1 && b;
-        buttonUp = button1 && !b;
+        buttonDown = !button && b;
+        buttonUp = button && !b;
         button = b;
     }
 }
