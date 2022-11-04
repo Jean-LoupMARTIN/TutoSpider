@@ -13,16 +13,16 @@ public class RandController : Controller
         timeOffset = Random.value * 1000;
     }
 
-    protected override (Vector2, Vector2) UpdateSticks()
+    void Update()
     {
         float time = Time.time + timeOffset;
 
-        Vector2 stickL = new Vector2(0.5f - Mathf.PerlinNoise(000, time * speed),
-                                     0.5f - Mathf.PerlinNoise(100, time * speed)).normalized;
-        Vector2 stickR = new Vector2(0.5f - Mathf.PerlinNoise(200, time * speed),
-                                     0.5f - Mathf.PerlinNoise(300, time * speed)).normalized;
-        return (stickL, stickR);
-    }
+        stickL = new Vector2(0.5f - Mathf.PerlinNoise(000, time * speed),
+                             0.5f - Mathf.PerlinNoise(100, time * speed)).normalized;
+        stickR = new Vector2(0.5f - Mathf.PerlinNoise(200, time * speed),
+                             0.5f - Mathf.PerlinNoise(300, time * speed)).normalized;
 
-    protected override bool UpdateButton1() => Mathf.PerlinNoise(400, Time.time + timeOffset * speed) > buttonProba;
+        SetButton1(Mathf.PerlinNoise(400, time * speed) > buttonProba);
+        SetButton2(Mathf.PerlinNoise(500, time * speed) > buttonProba);
+    }
 }

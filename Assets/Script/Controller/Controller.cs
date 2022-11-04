@@ -3,8 +3,8 @@ using UnityEngine;
 
 public abstract class Controller : MonoBehaviour
 {
-    Vector2 stickL;
-    Vector2 stickR;
+    protected Vector2 stickL;
+    protected Vector2 stickR;
 
     public Vector2 StickL { get => stickL; }
     public Vector2 StickR { get => stickR; }
@@ -12,27 +12,28 @@ public abstract class Controller : MonoBehaviour
     public Vector3 StickL3 => new Vector3(StickL.x, 0, StickL.y);
     public Vector3 StickR3 => new Vector3(StickR.x, 0, StickR.y);
 
-    bool button1 = false;
-    bool button1Down = false;
-    bool button1Up = false;
+    protected bool button1 = false;
+    protected bool button1Down = false;
+    protected bool button1Up = false;
 
-    public bool Button1 { get => button1; }
+    protected bool button2 = false;
+    protected bool button2Down = false;
+    protected bool button2Up = false;
+
+    public bool Button1     { get => button1; }
     public bool Button1Down { get => button1Down; }
-    public bool Button1Up { get => button1Up; }
+    public bool Button1Up   { get => button1Up; }
 
-    void SetButton1(bool b)
+    public bool Button2     { get => button2; }
+    public bool Button2Down { get => button2Down; }
+    public bool Button2Up   { get => button2Up; }
+
+    public void SetButton1(bool b) => SetButton(b, ref button1, ref button1Down, ref button1Up);
+    public void SetButton2(bool b) => SetButton(b, ref button2, ref button2Down, ref button2Up);
+    public void SetButton(bool b, ref bool button, ref bool buttonDown, ref bool buttonUp)
     {
-        button1Down = !button1 && b;
-        button1Up = button1 && !b;
-        button1 = b;
+        buttonDown = !button1 && b;
+        buttonUp = button1 && !b;
+        button = b;
     }
-
-    void Update()
-    {
-        (stickL, stickR) = UpdateSticks();
-        SetButton1(UpdateButton1());
-    }
-
-    protected abstract (Vector2, Vector2) UpdateSticks();
-    protected abstract bool UpdateButton1();
 }
