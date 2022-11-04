@@ -26,6 +26,7 @@ public class PlayerJump : MonoBehaviour
     State state = State.Grounded;
 
     Vector3 velocity;
+    float jumpTime;
 
     [SerializeField] float jumpVelocityY = 20;
     [SerializeField] float jumpPlayerVelocityCoef = 1;
@@ -44,6 +45,7 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] AnimationCurve targetsJumpCurve;
 
     [SerializeField] int airJumpCount = 1;
+    int airJumpCountCrt;
     [SerializeField] float airJumpVelocityY = 20;
     [SerializeField] float airJumpVelocityXZ = 10;
 
@@ -70,30 +72,39 @@ public class PlayerJump : MonoBehaviour
         orbits = spider.Orbits;
 
         bodyProj = transform.InverseTransformPoint(body.position);
+
+        airJumpCountCrt = airJumpCount;
     }
 
     void OnEnable()
     {
-        if      (state == State.Grounded)   StartCoroutine("CheckJump");
-        else if (state == State.Jumping)    StartCoroutine("Jumping");
-    }
+        if (state == State.Grounded)
+            controller.Y.OnPressDown.AddListener(Jump);
 
-    IEnumerator CheckJump()
-    {
-        while (true)
+        else if (state == State.Jumping)
         {
-            if (controller.Button1Down)
-            {
-                Jump();
-                break;
-            }
-            yield return new WaitForEndOfFrame();
+            controller.Y.OnPressDown.AddListener(TryAirJump);
+            StartCoroutine("Jumping");
         }
     }
 
+    void OnDisable()
+    {
+        if (state == State.Grounded)
+            controller.Y.OnPressDown.RemoveListener(Jump);
+
+        else if (state == State.Jumping)
+        {
+            controller.Y.OnPressDown.RemoveListener(TryAirJump);
+            StopCoroutine("Jumping");
+        }
+    }
 
     void Jump()
     {
+        controller.Y.OnPressDown.RemoveListener(Jump);
+        controller.Y.OnPressDown.AddListener(TryAirJump);
+
         state = State.Jumping;
 
         // transform match pivot rotation
@@ -101,6 +112,7 @@ public class PlayerJump : MonoBehaviour
 
         // start velocity
         velocity = transform.up * jumpVelocityY + transform.rotation * player3D.Velocity3 * jumpPlayerVelocityCoef;
+        jumpTime = 0;
 
         EnableSideScripts(false);
 
@@ -127,6 +139,7 @@ public class PlayerJump : MonoBehaviour
 
         TransferVelocityToPlayer3D();
         velocity = Vector3.zero;
+        jumpTime = 0;
 
         // move targets to orbits
         spider.UpdateOrbits();
@@ -141,12 +154,25 @@ public class PlayerJump : MonoBehaviour
 
         state = State.Grounded;
 
-        StartCoroutine("CheckJump");
+        airJumpCountCrt = airJumpCount;
+        controller.Y.OnPressDown.RemoveListener(TryAirJump);
+        controller.Y.OnPressDown.AddListener(Jump);
     }
 
 
+    void TryAirJump()
+    {
+        if (airJumpCountCrt > 0)
+        {
+            airJumpCountCrt--;
+            AirJump();
+        }
+    }
+
     void AirJump()
     {
+        jumpTime = 0;
+
         velocity = Vector2.zero;
         velocity.y = airJumpVelocityY;
 
@@ -166,9 +192,6 @@ public class PlayerJump : MonoBehaviour
 
     IEnumerator Jumping()
     {
-        int airJumpCount = this.airJumpCount;
-        float jumpTime = 0;
-
         while (true)
         {
             jumpTime += Time.deltaTime;
@@ -205,13 +228,6 @@ public class PlayerJump : MonoBehaviour
             UpdateTargets(jumpTime);
 
             yield return new WaitForEndOfFrame();
-
-            if (airJumpCount > 0 && controller.Button1Down)
-            {
-                AirJump();
-                airJumpCount--;
-                jumpTime = 0;
-            }
         }
 
         JumpEnd();

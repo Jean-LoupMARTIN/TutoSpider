@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.Events;
 
 public abstract class Controller : MonoBehaviour
 {
@@ -12,28 +12,35 @@ public abstract class Controller : MonoBehaviour
     public Vector3 StickL3 => new Vector3(StickL.x, 0, StickL.y);
     public Vector3 StickR3 => new Vector3(StickR.x, 0, StickR.y);
 
-    protected bool button1 = false;
-    protected bool button1Down = false;
-    protected bool button1Up = false;
+    public Button A = new Button();
+    public Button B = new Button();
+    public Button X = new Button();
+    public Button Y = new Button();
 
-    protected bool button2 = false;
-    protected bool button2Down = false;
-    protected bool button2Up = false;
-
-    public bool Button1     { get => button1; }
-    public bool Button1Down { get => button1Down; }
-    public bool Button1Up   { get => button1Up; }
-
-    public bool Button2     { get => button2; }
-    public bool Button2Down { get => button2Down; }
-    public bool Button2Up   { get => button2Up; }
-
-    public void SetButton1(bool b) => SetButton(b, ref button1, ref button1Down, ref button1Up);
-    public void SetButton2(bool b) => SetButton(b, ref button2, ref button2Down, ref button2Up);
-    public void SetButton(bool b, ref bool button, ref bool buttonDown, ref bool buttonUp)
+    public class Button
     {
-        buttonDown = !button && b;
-        buttonUp = button && !b;
-        button = b;
+        bool isPressed = false;
+        public UnityEvent OnPressDown = new UnityEvent();
+        public UnityEvent OnPressUp = new UnityEvent();
+
+
+        public bool IsPressed
+        {
+            get => isPressed;
+
+            set
+            {
+                if (isPressed == value)
+                    return;
+
+                if (!isPressed && value)
+                    OnPressDown.Invoke();
+
+                if (isPressed && !value)
+                    OnPressUp.Invoke();
+
+                isPressed = value;
+            }
+        }
     }
 }

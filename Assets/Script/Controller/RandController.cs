@@ -22,7 +22,9 @@ public class RandController : Controller
         stickR = new Vector2(0.5f - Mathf.PerlinNoise(200, time * speed),
                              0.5f - Mathf.PerlinNoise(300, time * speed)).normalized;
 
-        SetButton1(Mathf.PerlinNoise(400, time * speed) > buttonProba);
-        SetButton2(Mathf.PerlinNoise(500, time * speed) > buttonProba);
+        A.IsPressed = Mathf.PerlinNoise(400, time * speed) > buttonProba;
+        B.IsPressed = Mathf.PerlinNoise(500, time * speed) > buttonProba;
+        X.IsPressed = Mathf.PerlinNoise(600, time * speed) > buttonProba;
+        Y.IsPressed = Mathf.PerlinNoise(700, time * speed) > buttonProba;
     }
 }

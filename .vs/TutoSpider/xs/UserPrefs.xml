@@ -1,8 +1,12 @@
 ﻿<Properties StartupConfiguration="{E32E9E5A-DEFF-8D80-3CAE-37A7F2802B5E}|">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Player/PlayerJump.cs">
+    <Files>
+      <File FileName="Assets/Script/Player/PlayerJump.cs" Line="376" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b523e644-8626-4b7e-8706-3ed660232e8e" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="aca68ccf-d0b4-4e7f-8000-c4ccee2c74e7" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

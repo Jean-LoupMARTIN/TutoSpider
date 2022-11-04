@@ -13,8 +13,10 @@ public class KeyboardController : Controller
     [SerializeField] KeyCode key_stickR_down  = KeyCode.DownArrow;
     [SerializeField] KeyCode key_stickR_up    = KeyCode.UpArrow;
 
-    [SerializeField] KeyCode key_button1 = KeyCode.Space;
-    [SerializeField] KeyCode key_button2 = KeyCode.LeftShift;
+    [SerializeField] KeyCode key_A = KeyCode.N;
+    [SerializeField] KeyCode key_B = KeyCode.J;
+    [SerializeField] KeyCode key_X = KeyCode.H;
+    [SerializeField] KeyCode key_Y = KeyCode.U;
 
 
 
@@ -38,7 +40,9 @@ public class KeyboardController : Controller
     {
         stickL = Stick(key_stickL_left, key_stickL_right, key_stickL_down, key_stickL_up);
         stickR = Stick(key_stickR_left, key_stickR_right, key_stickR_down, key_stickR_up);
-        SetButton1(Input.GetKey(key_button1));
-        SetButton2(Input.GetKey(key_button2));
+        A.IsPressed = Input.GetKey(key_A);
+        B.IsPressed = Input.GetKey(key_B);
+        X.IsPressed = Input.GetKey(key_X);
+        Y.IsPressed = Input.GetKey(key_Y);
     }
 }
